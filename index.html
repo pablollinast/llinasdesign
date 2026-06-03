@@ -1,11 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pablo Llinas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta -->
+  <title>Pablo Llinas — Product &amp; Innovation</title>
+  <meta name="description" content="Pablo Llinas is a product builder and systems thinker with 8 years of experience in medical device development. Currently pursuing an M.S. in Strategic Design &amp; Management at Parsons, New York.">
+  <meta name="author" content="Pablo Llinas">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pablollinas.com/">
+  <meta property="og:title" content="Pablo Llinas — Product &amp; Innovation">
+  <meta property="og:description" content="Product builder and systems thinker. Medical devices, innovation strategy, and the organizations around them.">
+  <meta property="og:image" content="images/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pablo Llinas — Product &amp; Innovation">
+  <meta name="twitter:description" content="Product builder and systems thinker. Medical devices, innovation strategy, and the organizations around them.">
+  <meta name="twitter:image" content="images/og-image.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pablollinas.com/">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<h1>Coming soon</h1>
+
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+  <header class="nav" role="banner">
+    <a href="/" class="nav__logo" aria-label="Pablo Llinas — Home">
+      <img src="images/logo-pl-light.png" class="nav__logo-img nav__logo-img--light" alt="PL">
+      <img src="images/logo-pl-dark.png"  class="nav__logo-img nav__logo-img--dark"  alt="PL">
+    </a>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav__links">
+        <li><a href="#work"    class="nav__link">Work</a></li>
+        <li><a href="#about"   class="nav__link">About</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+        <li>
+          <a href="files/pablo-llinas-cv.pdf"
+             class="nav__link nav__link--cta"
+             target="_blank"
+             rel="noopener noreferrer">CV</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+  <section class="hero" aria-label="Introduction">
+    <img
+      src="images/hero-acetgard.png"
+      alt=""
+      class="hero__image"
+      role="presentation"
+      fetchpriority="high"
+    >
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow fade-up">
+        Product Development&nbsp;·&nbsp;Systems Thinking&nbsp;·&nbsp;New York
+      </p>
+
+      <h1 class="hero__heading" aria-label="I build products. And the systems around them.">
+        <span class="hero__line fade-up fade-up--delay-1">I build products.</span>
+        <span class="hero__line fade-up fade-up--delay-2">And the systems</span>
+        <span class="hero__line fade-up fade-up--delay-3">around them.</span>
+      </h1>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       ABOUT STRIP
+       ========================================================= -->
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="about__grid">
+
+      <!-- Left: portrait -->
+      <div class="about__image-wrap">
+        <img src="images/about-pablo.jpg" alt="Pablo Llinas sketching on iPad, Prusa printer in background" class="about__image">
+      </div>
+
+      <!-- Right: text -->
+      <div class="about__content">
+        <p class="about__eyebrow">About</p>
+
+        <h2 class="about__heading" id="about-heading">
+          Builder. Operator.<br>Systems thinker.
+        </h2>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <p class="about__body">
+          I co-founded an R&amp;D healthcare company and spent five years building medical devices
+          with surgeons, hospitals, engineers, and manufacturers. The work taught me good design
+          starts with paying attention. To people, to context, to what is often overlooked. Now at
+          Parsons, I'm expanding from building products to building the systems around them.
+        </p>
+
+        <ul class="about__credentials" aria-label="Credentials">
+          <li class="about__credential">
+            <span class="about__credential-title">M.S. Strategic Design &amp; Management</span>
+            <span class="about__credential-meta">Parsons School of Design, 2025–2027</span>
+          </li>
+          <li class="about__credential">
+            <span class="about__credential-title">Co-Founder &amp; CDO</span>
+            <span class="about__credential-meta">Health Engineering Design, 2020–2025</span>
+          </li>
+        </ul>
+
+        <a href="#contact" class="about__cta">Get in touch →</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       SELECTED WORK
+       ========================================================= -->
+  <section class="projects" id="work" aria-labelledby="work-heading">
+
+    <div class="section">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">Portfolio</p>
+          <h2 class="section-heading" id="work-heading">Selected Work <span class="section-heading-sub">/ A record of things made real.</span></h2>
+        </div>
+        <a href="work.html" class="btn btn--ghost" aria-label="View all projects">View all →</a>
+      </div>
+    </div>
+
+    <!-- Card 1: AcetGard — full width -->
+    <article class="project-card project-card--full">
+      <a href="projects/acetgard.html" class="project-card__link" aria-label="View AcetGard project">
+        <img
+          src="images/acetgard-card.jpg"
+          alt="AcetGard — acetabular cup positioning medical device"
+          class="project-card__image"
+          loading="lazy"
+        >
+        <div class="project-card__overlay" aria-hidden="true"></div>
+        <div class="project-card__content">
+          <p class="project-card__category">Medical Device · CO2021015180A1</p>
+          <h3 class="project-card__title">AcetGard</h3>
+        </div>
+        <span class="project-card__arrow" aria-hidden="true">→</span>
+      </a>
+    </article>
+
+    <!-- Card 2: HED — full width -->
+    <article class="project-card project-card--full">
+      <a href="projects/hed.html" class="project-card__link" aria-label="View Health Engineering Design project">
+        <img
+          src="images/hed-team.jpg"
+          alt="Health Engineering Design team — whiteboard session"
+          class="project-card__image"
+          loading="lazy"
+        >
+        <div class="project-card__overlay" aria-hidden="true"></div>
+        <div class="project-card__content">
+          <p class="project-card__category">Co-Founder · CDO · 2020–2025</p>
+          <h3 class="project-card__title">Health Engineering Design</h3>
+          <p class="project-card__subtitle">5 years · 100+ projects · Surgical devices to enterprise healthcare</p>
+        </div>
+        <span class="project-card__arrow" aria-hidden="true">→</span>
+      </a>
+    </article>
+
+    <!-- Card 3: Bayer — full width -->
+    <article class="project-card project-card--full">
+      <a href="projects/bayer.html" class="project-card__link" aria-label="View Bayer project">
+        <img
+          src="images/bayer-card.png"
+          alt="Bayer — abstract network visualization, innovation systems"
+          class="project-card__image"
+          loading="lazy"
+        >
+        <div class="project-card__overlay" aria-hidden="true"></div>
+        <div class="project-card__content">
+          <p class="project-card__category">Innovation Systems · Consulting</p>
+          <h3 class="project-card__title">Bayer — Value System Tracker</h3>
+        </div>
+        <span class="project-card__arrow" aria-hidden="true">→</span>
+      </a>
+    </article>
+
+    <!-- Row 1: Hypnos + SkinGo -->
+    <div class="project-card__row" role="list" aria-label="Project grid row">
+
+      <article class="project-card project-card--half" role="listitem">
+        <a href="projects/hypnos.html" class="project-card__link" aria-label="View Hypnos project">
+          <img
+            src="images/hypnos-card.jpg"
+            alt="Hypnos — packaged product with branding"
+            class="project-card__image"
+            loading="lazy"
+          >
+          <div class="project-card__overlay" aria-hidden="true"></div>
+          <div class="project-card__content">
+            <p class="project-card__category">Product Design · Recovery</p>
+            <h3 class="project-card__title">Hypnos</h3>
+          </div>
+          <span class="project-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <article class="project-card project-card--half" role="listitem">
+        <a href="projects/skingo.html" class="project-card__link" aria-label="View SkinGo project">
+          <img
+            src="images/skingo-card.png"
+            alt="SkinGo — medical device glove, black background"
+            class="project-card__image"
+            loading="lazy"
+          >
+          <div class="project-card__overlay" aria-hidden="true"></div>
+          <div class="project-card__content">
+            <p class="project-card__category">Medical Device · WO2022043956A1</p>
+            <h3 class="project-card__title">SkinGo</h3>
+          </div>
+          <span class="project-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+
+    </div>
+
+    <!-- Row 2: Curva + More Work placeholder -->
+    <div class="project-card__row" role="list" aria-label="Project grid row">
+
+      <article class="project-card project-card--half" role="listitem">
+        <a href="projects/curva.html" class="project-card__link" aria-label="View Curva project">
+          <img
+            src="images/curva-card.png"
+            alt="Curva — orange bench render, editorial crop"
+            class="project-card__image"
+            loading="lazy"
+          >
+          <div class="project-card__overlay" aria-hidden="true"></div>
+          <div class="project-card__content">
+            <p class="project-card__category">Product Design · Furniture</p>
+            <h3 class="project-card__title">Curva</h3>
+          </div>
+          <span class="project-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <article class="project-card project-card--half" role="listitem">
+        <a href="work.html" class="project-card__link" aria-label="View all work">
+          <img
+            src="images/about-pablo.jpg"
+            alt="More work — Pablo at the drawing board"
+            class="project-card__image"
+            loading="lazy"
+          >
+          <div class="project-card__overlay" aria-hidden="true"></div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">More Work</h3>
+            <p class="project-card__subtitle">View the full portfolio →</p>
+          </div>
+          <span class="project-card__arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       CONTACT STRIP
+       ========================================================= -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="contact__inner section">
+
+      <div class="contact__left">
+        <h2 class="contact__heading" id="contact-heading">
+          Let's work <em>together.</em>
+        </h2>
+      </div>
+
+      <div class="contact__right">
+        <a href="mailto:pablo.llinast@gmail.com" class="contact__email">
+          pablo.llinast@gmail.com
+        </a>
+
+        <a href="tel:+17186026568" class="contact__phone">+1 718 602 6568</a>
+
+        <ul class="contact__social" aria-label="Social links">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/pablo-llinas-tono/"
+              class="contact__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Pablo Llinas on LinkedIn"
+            >LinkedIn</a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/p.llinasdesign"
+              class="contact__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Pablo Llinas on Instagram"
+            >Instagram</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+
+      <!-- Column 1: Identity -->
+      <div class="footer__col">
+        <img src="images/logo-pl-dark.png" alt="PL Design" class="footer__logo-img">
+        <p class="footer__tagline">Product builder &amp; systems thinker<br>based in New York.</p>
+        <p class="footer__copy">© 2026 Pablo Llinas</p>
+      </div>
+
+      <!-- Column 2: Navigate -->
+      <div class="footer__col">
+        <p class="footer__heading">Navigate</p>
+        <a href="#work" class="footer__link">Work</a>
+        <a href="#about" class="footer__link">About</a>
+        <a href="files/pablo-llinas-cv.pdf" class="footer__link" target="_blank" rel="noopener noreferrer">CV</a>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">Built with intention. New York, 2026.</p>
+    </div>
+  </footer>
+
+
+  <!-- Script -->
+  <script src="js/main.js" defer></script>
+
 </body>
 </html>

@@ -76,6 +76,13 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
+  cursor: default;
+}
+
+.proj-item__img-wrap,
+.proj-item__title,
+.proj-item__cta {
+  cursor: pointer;
 }
 
 .proj-item--reverse .proj-item__link {
@@ -160,6 +167,8 @@
   line-height: 1.8;
   color: var(--dark-charcoal);
   max-width: 520px;
+  cursor: default;
+  pointer-events: none;
 }
 
 .proj-item__patent {
@@ -239,7 +248,7 @@
 
 .proj-archive__ellipsis {
   font-style: italic;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--white);
 }
 
 .proj-archive__sub {

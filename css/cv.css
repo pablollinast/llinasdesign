@@ -1,0 +1,435 @@
+/* =============================================================================
+   CV PAGE — cv.css
+   ============================================================================= */
+
+/* --- Page base ------------------------------------------------------------- */
+.cv-page {
+  background: var(--off-white);
+}
+
+/* --- Main layout ----------------------------------------------------------- */
+.cv-main {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  min-height: 100vh;
+  padding-top: var(--nav-height);
+}
+
+
+/* =============================================================================
+   SIDEBAR
+   ============================================================================= */
+.cv-sidebar {
+  position: sticky;
+  top: var(--nav-height);
+  height: calc(100vh - var(--nav-height));
+  overflow-y: auto;
+  background: var(--warm-black);
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none;
+}
+
+.cv-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Photo */
+.cv-sidebar__photo-wrap {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cv-sidebar__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+  opacity: 0;
+  animation: cvFadeIn 1s ease 0.3s forwards;
+}
+
+.cv-sidebar__photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(26, 24, 20, 0.6) 75%,
+    var(--warm-black) 100%
+  );
+}
+
+/* Info block */
+.cv-sidebar__info {
+  padding: 32px 36px 48px;
+  flex: 1;
+}
+
+.cv-sidebar__name {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: cvFadeIn 0.8s ease 0.6s forwards;
+}
+
+.cv-sidebar__title {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  opacity: 0;
+  animation: cvFadeIn 0.8s ease 0.8s forwards;
+}
+
+.cv-sidebar__divider {
+  width: 32px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 24px 0;
+}
+
+/* Contact */
+.cv-sidebar__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cv-sidebar__contact-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: rgba(255, 255, 255, 0.35);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.cv-sidebar__contact-value {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.cv-sidebar__contact-link {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.70);
+  transition: color 0.2s ease;
+  display: block;
+}
+
+.cv-sidebar__contact-link:hover {
+  color: var(--accent);
+}
+
+/* Skills / Tools / Languages */
+.cv-sidebar__skills-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.cv-sidebar__skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cv-sidebar__skills-list li {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.4;
+}
+
+/* Download button */
+.cv-sidebar__download {
+  margin-top: 32px;
+}
+
+.cv-download-btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--white);
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
+  padding: 12px 20px;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.cv-download-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+
+/* =============================================================================
+   CONTENT
+   ============================================================================= */
+.cv-content {
+  padding: 80px 72px 120px;
+  max-width: 860px;
+}
+
+/* Section */
+.cv-section {
+  margin-bottom: 64px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cvFadeUp 0.7s ease forwards;
+}
+
+.cv-section:nth-child(1) { animation-delay: 0.4s; }
+.cv-section:nth-child(2) { animation-delay: 0.55s; }
+.cv-section:nth-child(3) { animation-delay: 0.7s; }
+.cv-section:nth-child(4) { animation-delay: 0.85s; }
+.cv-section:nth-child(5) { animation-delay: 1.0s; }
+
+.cv-section--last {
+  margin-bottom: 0;
+}
+
+.cv-section__eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.cv-section__body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--dark-charcoal);
+}
+
+.cv-section__body--lead {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Role */
+.cv-role {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.cv-role:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cv-role__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.cv-role__left {
+  flex: 1;
+}
+
+.cv-role__right {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.cv-role__company {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--warm-black);
+  margin-bottom: 4px;
+}
+
+.cv-role__title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--mid-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cv-role__note {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+.cv-role__location {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--mid-gray);
+  margin-bottom: 4px;
+}
+
+.cv-role__date {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--mid-gray);
+}
+
+.cv-role__bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cv-role__bullets li {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--dark-charcoal);
+  padding-left: 16px;
+  position: relative;
+}
+
+.cv-role__bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+/* Patents */
+.cv-patents {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cv-patent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.cv-patent:first-child {
+  border-top: none;
+}
+
+.cv-patent__name {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--warm-black);
+  margin-bottom: 2px;
+}
+
+.cv-patent__desc {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--mid-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cv-patent__number {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+/* =============================================================================
+   ANIMATIONS
+   ============================================================================= */
+@keyframes cvFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes cvFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+@media (max-width: 1024px) {
+  .cv-main {
+    grid-template-columns: 300px 1fr;
+  }
+
+  .cv-content {
+    padding: 60px 48px 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-main {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-sidebar {
+    position: relative;
+    height: auto;
+  }
+
+  .cv-sidebar__photo-wrap {
+    height: 300px;
+  }
+
+  .cv-content {
+    padding: 40px 24px 60px;
+  }
+
+  .cv-role__header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cv-role__right {
+    text-align: left;
+  }
+}

@@ -58,12 +58,12 @@
    3. HERO TEXT ANIMATION
    --------------------------------------------------------------------------- */
 (function initHeroAnimation() {
-  // A → B → C: each part starts as soon as the previous finishes (1.5s transition + 100ms breath)
+  // A → B → C: tighter chain, next starts just before previous finishes
   const schedule = [
-    { selector: '.hero__eyebrow',           delay: 400  }, // A — done ~1900ms
-    { selector: '.hero__line:nth-child(1)', delay: 2000 }, // B — done ~3500ms
-    { selector: '.hero__line:nth-child(2)', delay: 3600 }, // C — both lines together
-    { selector: '.hero__line:nth-child(3)', delay: 3700 },
+    { selector: '.hero__eyebrow',           delay: 400  }, // A
+    { selector: '.hero__line:nth-child(1)', delay: 1600 }, // B — starts 400ms before A done
+    { selector: '.hero__line:nth-child(2)', delay: 2800 }, // C
+    { selector: '.hero__line:nth-child(3)', delay: 2900 },
   ];
 
   function revealHero() {

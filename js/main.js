@@ -45,10 +45,10 @@
    --------------------------------------------------------------------------- */
 (function initHeroAnimation() {
   const schedule = [
-    { selector: '.hero__eyebrow', delay: 200 },
-    { selector: '.hero__line:nth-child(1)', delay: 400 },
-    { selector: '.hero__line:nth-child(2)', delay: 600 },
-    { selector: '.hero__line:nth-child(3)', delay: 800 },
+    { selector: '.hero__eyebrow', delay: 300 },
+    { selector: '.hero__line:nth-child(1)', delay: 700 },   // "I build products."
+    { selector: '.hero__line:nth-child(2)', delay: 1800 },  // "And the systems" — after line 1 completes
+    { selector: '.hero__line:nth-child(3)', delay: 2150 },  // "around them."
   ];
 
   function revealHero() {
@@ -105,7 +105,7 @@
     const img = card.querySelector('.project-card__image');
     if (!img) return;
 
-    img.style.transition = 'transform 0.4s ease-out';
+    img.style.transition = 'transform 0.4s ease-out, opacity 0.4s ease';
 
     function onMove(e) {
       const rect = card.getBoundingClientRect();

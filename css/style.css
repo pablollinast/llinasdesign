@@ -157,6 +157,11 @@ p {
   }
 }
 
+@keyframes heroImageReveal {
+  from { opacity: 0.2; }
+  to   { opacity: 1; }
+}
+
 .fade-up {
   animation: fadeUp 0.7s ease both;
 }
@@ -306,6 +311,7 @@ p {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  animation: heroImageReveal 5s ease both;
 }
 
 .hero__overlay {
@@ -705,8 +711,9 @@ p {
 
 .footer__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto 1fr 1fr 1fr;
   gap: var(--space-md);
+  align-items: start;
   padding: 48px;
   max-width: 1400px;
   margin-inline: auto;
@@ -721,10 +728,26 @@ p {
 }
 
 .footer__logo-img {
-  height: 48px;
+  height: 72px;
   width: auto;
   display: block;
-  margin-bottom: var(--space-sm);
+}
+
+.footer__social {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  color: var(--mid-gray);
+  transition: color var(--transition-base);
+}
+
+.footer__social-link:hover {
+  color: var(--accent);
 }
 
 .footer__tagline {
@@ -774,7 +797,7 @@ p {
 .footer__bottom {
   max-width: 1400px;
   margin-inline: auto;
-  padding: var(--space-sm) 48px;
+  padding: 8px 48px 24px;
   border-top: 0.5px solid var(--border);
   display: flex;
   align-items: center;
@@ -783,7 +806,7 @@ p {
 
 .footer__copy {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 300;
   color: var(--mid-gray);
 }
@@ -1393,12 +1416,17 @@ p {
   transform: translateY(0);
 }
 
-/* Cards dim at rest after reveal; brighten on hover */
+/* Cards: full opacity after reveal — only the image dims/brightens */
 .project-card.is-visible {
-  opacity: 0.4;
+  opacity: 1;
 }
 
-.project-card.is-visible:hover {
+.project-card.is-visible .project-card__image {
+  opacity: 0.4;
+  transition: opacity 0.4s ease, transform var(--transition-slow);
+}
+
+.project-card.is-visible:hover .project-card__image {
   opacity: 1;
 }
 

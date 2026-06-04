@@ -18,25 +18,39 @@
 
 
 /* ---------------------------------------------------------------------------
-   2. NAVIGATION — scroll state
+   2. NAVIGATION — transparent always, adapts to section background
    --------------------------------------------------------------------------- */
 (function initNav() {
   const nav = document.querySelector('.nav');
   if (!nav) return;
 
+  const lightSections = document.querySelectorAll('[data-nav-light]');
   let ticking = false;
+
+  function updateNav() {
+    const threshold = 64; // nav height
+    let isLight = false;
+
+    lightSections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= threshold && rect.bottom > threshold) {
+        isLight = true;
+      }
+    });
+
+    nav.classList.toggle('nav--light-bg', isLight);
+    ticking = false;
+  }
 
   function onScroll() {
     if (!ticking) {
-      window.requestAnimationFrame(() => {
-        nav.classList.toggle('nav--scrolled', window.scrollY > 50);
-        ticking = false;
-      });
+      window.requestAnimationFrame(updateNav);
       ticking = true;
     }
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
+  updateNav(); // run once on load
 })();
 
 
@@ -44,12 +58,12 @@
    3. HERO TEXT ANIMATION
    --------------------------------------------------------------------------- */
 (function initHeroAnimation() {
-  // Each line waits for the previous to fully complete (transition = 0.7s each)
+  // Each line fades over 4s — next starts only after previous is fully visible
   const schedule = [
-    { selector: '.hero__eyebrow',           delay: 300  }, // fully visible ~1000ms
-    { selector: '.hero__line:nth-child(1)', delay: 1100 }, // fully visible ~1800ms
-    { selector: '.hero__line:nth-child(2)', delay: 1900 }, // fully visible ~2600ms
-    { selector: '.hero__line:nth-child(3)', delay: 2700 }, // fully visible ~3400ms
+    { selector: '.hero__eyebrow',           delay: 200  }, // fade 4s → done ~4200ms
+    { selector: '.hero__line:nth-child(1)', delay: 4400 }, // fade 4s → done ~8400ms
+    { selector: '.hero__line:nth-child(2)', delay: 8600 }, // fade 4s (lines 2+3 together)
+    { selector: '.hero__line:nth-child(3)', delay: 8800 },
   ];
 
   function revealHero() {

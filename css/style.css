@@ -1375,26 +1375,18 @@ p {
   opacity: 0;
 }
 
-/* --- Nav scrolled ---------------------------------------------------------- */
-.nav--scrolled {
-  background: rgba(247, 245, 240, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 0.5px solid var(--border);
-  box-shadow: 0 1px 0 rgba(26, 24, 20, 0.06);
-}
-
-.nav--scrolled .nav__link {
+/* --- Nav theme — transparent always, text adapts to section background ---- */
+/* Over light section */
+.nav--light-bg .nav__link {
   color: var(--dark-charcoal);
 }
 
-.nav--scrolled .nav__link:hover {
+.nav--light-bg .nav__link:hover {
   color: var(--accent);
 }
 
-/* Logo swap on scroll */
-.nav--scrolled .nav__logo-img--light { opacity: 0; }
-.nav--scrolled .nav__logo-img--dark  { opacity: 1; }
+.nav--light-bg .nav__logo-img--light { opacity: 0; }
+.nav--light-bg .nav__logo-img--dark  { opacity: 1; }
 
 /* --- Scroll reveal base state --------------------------------------------- */
 .project-card,
@@ -1461,7 +1453,7 @@ p {
 .hero__line {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 4s ease, transform 1.5s ease;
 }
 
 .hero__eyebrow.is-visible,

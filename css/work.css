@@ -1,0 +1,393 @@
+/* =============================================================================
+   PABLO LLINAS — Work / Archive page
+   work.css
+   ============================================================================= */
+
+
+/* =============================================================================
+   WORK HERO
+   ============================================================================= */
+.work-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 560px;
+  background: var(--black);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.work-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: heroImageReveal 8s ease both;
+}
+
+.work-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.15) 55%,
+    transparent 100%
+  );
+}
+
+.work-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-lg);
+  max-width: 900px;
+  animation: fadeUp 0.9s ease 0.2s both;
+}
+
+.work-hero__eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: var(--space-xs);
+}
+
+.work-hero__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(64px, 9vw, 120px);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.work-hero__ellipsis {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.work-hero__ellipsis--white {
+  color: var(--white);
+}
+
+
+/* =============================================================================
+   WORK INTRO
+   ============================================================================= */
+.work-intro {
+  background: var(--off-white);
+  padding: var(--space-xl) 0;
+}
+
+.work-intro__inner {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 48px;
+  text-align: center;
+}
+
+.work-intro__text {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 2.5vw, 34px);
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--dark-charcoal);
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.work-intro__line {
+  display: block;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.work-intro__line.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.work-intro__line:nth-child(1) { transition-delay: 0.0s; }
+.work-intro__line:nth-child(2) { transition-delay: 0.18s; }
+.work-intro__line:nth-child(3) { transition-delay: 0.36s; }
+.work-intro__line:nth-child(4) { transition-delay: 0.54s; }
+
+
+/* =============================================================================
+   WORK SECTIONS (dark & light variants)
+   ============================================================================= */
+.work-section {
+  padding: var(--space-xl) 0;
+}
+
+.work-section--dark {
+  background: var(--warm-black);
+}
+
+.work-section--light {
+  background: var(--off-white);
+}
+
+.work-section__header {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 48px;
+  margin-bottom: var(--space-lg);
+}
+
+.work-section__eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: var(--space-xs);
+}
+
+.work-section__eyebrow--dark {
+  color: var(--accent);
+}
+
+.work-section__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 4vw, 60px);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.work-section__heading--dark {
+  color: var(--warm-black);
+}
+
+
+/* =============================================================================
+   WORK GRID
+   ============================================================================= */
+.work-grid {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 48px;
+  display: grid;
+  gap: 2px;
+}
+
+.work-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.work-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.work-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+
+/* =============================================================================
+   WORK ITEM (card)
+   ============================================================================= */
+.work-item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.work-item__img-wrap {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--dark-charcoal);
+}
+
+.work-item--light .work-item__img-wrap {
+  background: var(--light-gray);
+}
+
+.work-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.work-item:hover .work-item__img {
+  transform: scale(1.04);
+}
+
+.work-item__caption {
+  padding: var(--space-sm) 0;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.work-item__caption--dark {
+  border-bottom-color: var(--border);
+}
+
+.work-item__name {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.work-item__name--dark {
+  color: var(--warm-black);
+}
+
+.work-item__meta {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.work-item__meta--dark {
+  color: var(--mid-gray);
+}
+
+
+/* =============================================================================
+   SKETCH FEATURE
+   ============================================================================= */
+.work-sketch {
+  background: var(--off-white);
+  padding: var(--space-xl) 0;
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.work-sketch__inner {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.work-sketch__image-wrap {
+  overflow: hidden;
+  background: var(--light-gray);
+}
+
+.work-sketch__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.work-sketch__image-wrap:hover .work-sketch__img {
+  transform: scale(1.02);
+}
+
+.work-sketch__label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.work-sketch__title {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--warm-black);
+  margin-bottom: var(--space-sm);
+}
+
+.work-sketch__meta {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--mid-gray);
+  margin-bottom: var(--space-md);
+}
+
+.work-sketch__note {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--dark-charcoal);
+  line-height: 1.4;
+}
+
+
+/* =============================================================================
+   SCROLL REVEAL — work items
+   ============================================================================= */
+.work-item,
+.work-section__header {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.work-item.is-visible,
+.work-section__header.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger grid items */
+.work-item:nth-child(2) { transition-delay: 0.1s; }
+.work-item:nth-child(3) { transition-delay: 0.2s; }
+.work-item:nth-child(4) { transition-delay: 0.3s; }
+
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+@media (max-width: 1024px) {
+  .work-intro__inner,
+  .work-section__header,
+  .work-grid,
+  .work-sketch__inner {
+    padding-inline: 32px;
+  }
+
+  .work-grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .work-intro__inner,
+  .work-section__header,
+  .work-grid,
+  .work-sketch__inner {
+    padding-inline: 20px;
+  }
+
+  .work-hero__content {
+    padding: var(--space-md) 20px;
+  }
+
+  .work-grid--2,
+  .work-grid--3,
+  .work-grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .work-sketch__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .work-item:nth-child(2),
+  .work-item:nth-child(3),
+  .work-item:nth-child(4) {
+    transition-delay: 0s;
+  }
+}

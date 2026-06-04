@@ -58,12 +58,12 @@
    3. HERO TEXT ANIMATION
    --------------------------------------------------------------------------- */
 (function initHeroAnimation() {
-  // Each next line starts at the midpoint (2s) of the previous — continuous overlap, no dead time
+  // A → B → C: each part starts as soon as the previous finishes (1.5s transition + 100ms breath)
   const schedule = [
-    { selector: '.hero__eyebrow',           delay: 200  },
-    { selector: '.hero__line:nth-child(1)', delay: 2200 },
-    { selector: '.hero__line:nth-child(2)', delay: 4200 },
-    { selector: '.hero__line:nth-child(3)', delay: 6200 },
+    { selector: '.hero__eyebrow',           delay: 400  }, // A — done ~1900ms
+    { selector: '.hero__line:nth-child(1)', delay: 2000 }, // B — done ~3500ms
+    { selector: '.hero__line:nth-child(2)', delay: 3600 }, // C — both lines together
+    { selector: '.hero__line:nth-child(3)', delay: 3700 },
   ];
 
   function revealHero() {

@@ -37,6 +37,12 @@
 
 /* Nav inherits homepage transparent adaptive behaviour via main.js + data-nav-light on body */
 
+/* Footer sits above fixed photo background */
+.cv-page .footer {
+  position: relative;
+  z-index: 1;
+}
+
 /* --- Main layout ----------------------------------------------------------- */
 .cv-main {
   position: relative;

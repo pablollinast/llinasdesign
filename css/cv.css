@@ -213,10 +213,12 @@
 
 
 /* =============================================================================
-   CONTENT — solid panel for readability
+   CONTENT — frosted glass panel over photo
    ============================================================================= */
 .cv-content {
-  background: var(--off-white);
+  background: rgba(247, 245, 240, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 80px 72px 120px;
   max-width: 860px;
 }

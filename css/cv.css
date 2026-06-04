@@ -7,22 +7,41 @@
   background: var(--off-white);
 }
 
+/* --- Nav override: always frosted + dark on CV page (no dark hero) --------- */
+.cv-page .nav {
+  background: rgba(247, 245, 240, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.cv-page .nav__link {
+  color: var(--dark-charcoal);
+}
+
+.cv-page .nav__link:hover {
+  color: var(--accent);
+}
+
+.cv-page .nav__logo-img--light { opacity: 0; }
+.cv-page .nav__logo-img--dark  { opacity: 1; }
+
 /* --- Main layout ----------------------------------------------------------- */
 .cv-main {
   display: grid;
   grid-template-columns: 360px 1fr;
   min-height: 100vh;
-  padding-top: var(--nav-height);
+  padding-top: 0; /* sidebar extends behind nav */
 }
 
 
 /* =============================================================================
-   SIDEBAR
+   SIDEBAR — photo fills full height as background
    ============================================================================= */
 .cv-sidebar {
   position: sticky;
-  top: var(--nav-height);
-  height: calc(100vh - var(--nav-height));
+  top: 0;
+  height: 100vh;
   overflow-y: auto;
   background: var(--warm-black);
   display: flex;
@@ -34,12 +53,12 @@
   display: none;
 }
 
-/* Photo */
+/* Photo — full sidebar background */
 .cv-sidebar__photo-wrap {
-  position: relative;
-  height: 580px;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
-  flex-shrink: 0;
+  z-index: 0;
 }
 
 .cv-sidebar__photo {
@@ -57,16 +76,29 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    transparent 40%,
-    rgba(26, 24, 20, 0.6) 75%,
-    var(--warm-black) 100%
+    rgba(26, 24, 20, 0.15) 0%,
+    transparent 20%,
+    rgba(26, 24, 20, 0.35) 55%,
+    rgba(26, 24, 20, 0.80) 72%,
+    var(--warm-black) 88%
   );
 }
 
-/* Info block */
+/* Info block — floats over photo */
 .cv-sidebar__info {
-  padding: 32px 36px 48px;
+  position: relative;
+  z-index: 2;
+  padding: calc(var(--nav-height) + 40px) 36px 48px;
   flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cv-sidebar__info::-webkit-scrollbar {
+  display: none;
 }
 
 .cv-sidebar__name {
@@ -190,7 +222,7 @@
    CONTENT
    ============================================================================= */
 .cv-content {
-  padding: 80px 72px 120px;
+  padding: calc(var(--nav-height) + 60px) 72px 120px;
   max-width: 860px;
 }
 
@@ -402,7 +434,7 @@
   }
 
   .cv-content {
-    padding: 60px 48px 80px;
+    padding: calc(var(--nav-height) + 40px) 48px 80px;
   }
 }
 
@@ -414,10 +446,18 @@
   .cv-sidebar {
     position: relative;
     height: auto;
+    min-height: 480px;
   }
 
   .cv-sidebar__photo-wrap {
-    height: 300px;
+    position: absolute;
+    inset: 0;
+    height: auto;
+  }
+
+  .cv-sidebar__info {
+    padding-top: calc(var(--nav-height) + 280px);
+    justify-content: flex-start;
   }
 
   .cv-content {

@@ -4,15 +4,44 @@
 
 /* --- Page base ------------------------------------------------------------- */
 .cv-page {
-  background: var(--off-white);
+  background: var(--warm-black);
 }
 
-/* --- Nav override: always frosted + dark on CV page (no dark hero) --------- */
+/* --- Full-page background photo -------------------------------------------- */
+.cv-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.cv-bg__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+  opacity: 0;
+  animation: cvFadeIn 1.2s ease 0.2s forwards;
+}
+
+.cv-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(26, 24, 20, 0.55) 0%,
+    rgba(26, 24, 20, 0.30) 40%,
+    rgba(26, 24, 20, 0.65) 100%
+  );
+}
+
+/* --- Nav override: always frosted + dark on CV page ------------------------ */
 .cv-page .nav {
   background: rgba(247, 245, 240, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 0.5px solid var(--border);
+  z-index: 100;
 }
 
 .cv-page .nav__link {
@@ -28,77 +57,41 @@
 
 /* --- Main layout ----------------------------------------------------------- */
 .cv-main {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 360px 1fr;
   min-height: 100vh;
-  padding-top: 0; /* sidebar extends behind nav */
+  padding-top: var(--nav-height);
 }
 
 
 /* =============================================================================
-   SIDEBAR — photo fills full height as background
+   SIDEBAR — transparent dark panel over photo
    ============================================================================= */
 .cv-sidebar {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: var(--nav-height);
+  height: calc(100vh - var(--nav-height));
   overflow-y: auto;
-  background: var(--warm-black);
+  background: rgba(26, 24, 20, 0.45);
+  backdrop-filter: blur(2px);
   display: flex;
   flex-direction: column;
   scrollbar-width: none;
+  border-right: 0.5px solid rgba(255, 255, 255, 0.08);
 }
 
 .cv-sidebar::-webkit-scrollbar {
   display: none;
 }
 
-/* Photo — full sidebar background */
-.cv-sidebar__photo-wrap {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.cv-sidebar__photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-  display: block;
-  opacity: 0;
-  animation: cvFadeIn 1s ease 0.3s forwards;
-}
-
-.cv-sidebar__photo-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 24, 20, 0.15) 0%,
-    transparent 20%,
-    rgba(26, 24, 20, 0.35) 55%,
-    rgba(26, 24, 20, 0.80) 72%,
-    var(--warm-black) 88%
-  );
-}
-
-/* Info block — floats over photo */
+/* Info block */
 .cv-sidebar__info {
-  position: relative;
-  z-index: 2;
-  padding: calc(var(--nav-height) + 40px) 36px 48px;
+  padding: 40px 36px 48px;
   flex: 1;
-  overflow-y: auto;
-  scrollbar-width: none;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-}
-
-.cv-sidebar__info::-webkit-scrollbar {
-  display: none;
 }
 
 .cv-sidebar__name {
@@ -110,7 +103,7 @@
   color: var(--white);
   margin-bottom: 8px;
   opacity: 0;
-  animation: cvFadeIn 0.8s ease 0.6s forwards;
+  animation: cvFadeIn 0.8s ease 0.5s forwards;
 }
 
 .cv-sidebar__title {
@@ -121,7 +114,7 @@
   letter-spacing: 0.12em;
   color: var(--accent);
   opacity: 0;
-  animation: cvFadeIn 0.8s ease 0.8s forwards;
+  animation: cvFadeIn 0.8s ease 0.7s forwards;
 }
 
 .cv-sidebar__divider {
@@ -196,7 +189,8 @@
 
 /* Download button */
 .cv-sidebar__download {
-  margin-top: 32px;
+  margin-top: auto;
+  padding-top: 32px;
 }
 
 .cv-download-btn {
@@ -219,10 +213,11 @@
 
 
 /* =============================================================================
-   CONTENT
+   CONTENT — solid panel for readability
    ============================================================================= */
 .cv-content {
-  padding: calc(var(--nav-height) + 60px) 72px 120px;
+  background: var(--off-white);
+  padding: 80px 72px 120px;
   max-width: 860px;
 }
 
@@ -289,9 +284,7 @@
   margin-bottom: 20px;
 }
 
-.cv-role__left {
-  flex: 1;
-}
+.cv-role__left { flex: 1; }
 
 .cv-role__right {
   text-align: right;
@@ -369,7 +362,6 @@
 .cv-patents {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .cv-patent {
@@ -380,9 +372,7 @@
   border-bottom: 0.5px solid var(--border);
 }
 
-.cv-patent:first-child {
-  border-top: none;
-}
+.cv-patent:first-child { border-top: none; }
 
 .cv-patent__name {
   font-family: var(--font-heading);
@@ -434,7 +424,7 @@
   }
 
   .cv-content {
-    padding: calc(var(--nav-height) + 40px) 48px 80px;
+    padding: 60px 48px 80px;
   }
 }
 
@@ -443,25 +433,19 @@
     grid-template-columns: 1fr;
   }
 
+  .cv-bg__img {
+    object-position: center top;
+  }
+
   .cv-sidebar {
     position: relative;
     height: auto;
-    min-height: 480px;
-  }
-
-  .cv-sidebar__photo-wrap {
-    position: absolute;
-    inset: 0;
-    height: auto;
-  }
-
-  .cv-sidebar__info {
-    padding-top: calc(var(--nav-height) + 280px);
-    justify-content: flex-start;
+    min-height: 360px;
   }
 
   .cv-content {
     padding: 40px 24px 60px;
+    background: var(--off-white);
   }
 
   .cv-role__header {

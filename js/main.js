@@ -87,7 +87,8 @@
 (function initScrollReveal() {
   const targets = document.querySelectorAll(
     '.project-card, .about__content, .about__image-wrap, .about__credential, .contact,' +
-    '.work-item, .work-section__header, .work-intro__line'
+    '.work-item, .work-section__header, .work-intro__line,' +
+    '.proj-item, .proj-header__eyebrow, .proj-header__heading, .proj-header__sub'
   );
   if (!targets.length) return;
 

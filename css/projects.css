@@ -249,6 +249,8 @@
 .proj-archive__ellipsis {
   font-style: italic;
   color: var(--white);
+  margin-left: 4px;
+  letter-spacing: -0.05em;
 }
 
 .proj-archive__sub {

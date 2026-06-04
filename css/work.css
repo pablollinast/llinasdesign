@@ -74,6 +74,11 @@
   color: var(--white);
 }
 
+.work-hero__ellipsis {
+  margin-left: 4px;
+  letter-spacing: -0.05em;
+}
+
 
 /* =============================================================================
    WORK INTRO

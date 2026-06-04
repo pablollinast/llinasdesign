@@ -88,7 +88,10 @@
   const targets = document.querySelectorAll(
     '.project-card, .about__content, .about__image-wrap, .about__credential, .contact,' +
     '.work-item, .work-section__header, .work-intro__line,' +
-    '.proj-item, .proj-header__eyebrow, .proj-header__heading, .proj-header__sub'
+    '.proj-item, .proj-header__eyebrow, .proj-header__heading, .proj-header__sub,' +
+    '.pp-intro__inner, .pp-section__header, .pp-grid__item, .pp-single-img, .pp-full-bleed-img, .pp-next__inner,' +
+    '.pp-reel__header, .pp-reel__card,' +
+    '.pp-final-caption'
   );
   if (!targets.length) return;
 

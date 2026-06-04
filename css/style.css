@@ -254,7 +254,7 @@ p {
 .nav__link {
   font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.85);
@@ -705,7 +705,7 @@ p {
 
 .footer__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: var(--space-md);
   padding: 48px;
   max-width: 1400px;
@@ -984,7 +984,7 @@ p {
 
 .project-card__category {
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 400;
   opacity: 1;
   transition: opacity var(--transition-base);
 }
@@ -1066,7 +1066,7 @@ p {
   font-size: clamp(20px, 2.5vw, 32px);
   font-weight: 300;
   color: var(--white);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 8px;
   transition: color var(--transition-base);
 }
 
@@ -1080,7 +1080,7 @@ p {
   font-size: 16px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.60);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   letter-spacing: 0.04em;
   transition: color var(--transition-base);
 }
@@ -1124,7 +1124,7 @@ p {
    ============================================================================= */
 .divider {
   width: 40px;
-  height: 0.5px;
+  height: 2px;
   background: var(--accent);
   margin: var(--space-md) 0;
 }
@@ -1391,6 +1391,26 @@ p {
 .contact.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Cards dim at rest after reveal; brighten on hover */
+.project-card.is-visible {
+  opacity: 0.4;
+}
+
+.project-card.is-visible:hover {
+  opacity: 1;
+}
+
+/* About section dim at rest; hover anywhere in section brightens both halves */
+.about__image-wrap.is-visible,
+.about__content.is-visible {
+  opacity: 0.4;
+}
+
+.about:hover .about__image-wrap.is-visible,
+.about:hover .about__content.is-visible {
+  opacity: 1;
 }
 
 /* Arrow must stay hidden until hover regardless of reveal state */

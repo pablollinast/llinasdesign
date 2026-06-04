@@ -44,11 +44,12 @@
    3. HERO TEXT ANIMATION
    --------------------------------------------------------------------------- */
 (function initHeroAnimation() {
+  // Each line waits for the previous to fully complete (transition = 0.7s each)
   const schedule = [
-    { selector: '.hero__eyebrow', delay: 300 },
-    { selector: '.hero__line:nth-child(1)', delay: 700 },   // "I build products."
-    { selector: '.hero__line:nth-child(2)', delay: 1800 },  // "And the systems" — after line 1 completes
-    { selector: '.hero__line:nth-child(3)', delay: 2150 },  // "around them."
+    { selector: '.hero__eyebrow',           delay: 300  }, // fully visible ~1000ms
+    { selector: '.hero__line:nth-child(1)', delay: 1100 }, // fully visible ~1800ms
+    { selector: '.hero__line:nth-child(2)', delay: 1900 }, // fully visible ~2600ms
+    { selector: '.hero__line:nth-child(3)', delay: 2700 }, // fully visible ~3400ms
   ];
 
   function revealHero() {

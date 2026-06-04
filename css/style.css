@@ -311,7 +311,7 @@ p {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  animation: heroImageReveal 5s ease both;
+  animation: heroImageReveal 8s ease both;
 }
 
 .hero__overlay {
@@ -711,10 +711,10 @@ p {
 
 .footer__inner {
   display: grid;
-  grid-template-columns: auto 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
   align-items: start;
-  padding: 48px;
+  padding: 48px 48px 16px;
   max-width: 1400px;
   margin-inline: auto;
 }

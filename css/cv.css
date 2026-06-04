@@ -35,25 +35,7 @@
   );
 }
 
-/* --- Nav override: always frosted + dark on CV page ------------------------ */
-.cv-page .nav {
-  background: rgba(247, 245, 240, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 0.5px solid var(--border);
-  z-index: 100;
-}
-
-.cv-page .nav__link {
-  color: var(--dark-charcoal);
-}
-
-.cv-page .nav__link:hover {
-  color: var(--accent);
-}
-
-.cv-page .nav__logo-img--light { opacity: 0; }
-.cv-page .nav__logo-img--dark  { opacity: 1; }
+/* Nav inherits homepage transparent adaptive behaviour via main.js + data-nav-light on body */
 
 /* --- Main layout ----------------------------------------------------------- */
 .cv-main {
@@ -213,12 +195,12 @@
 
 
 /* =============================================================================
-   CONTENT — frosted glass panel over photo
+   CONTENT — transparent glass card over photo
    ============================================================================= */
 .cv-content {
-  background: rgba(247, 245, 240, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(247, 245, 240, 0.70);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   padding: 80px 72px 120px;
   max-width: 860px;
 }

@@ -64,6 +64,13 @@
   color: var(--white);
 }
 
+.pp-hero__reg {
+  font-size: 0.3em;
+  vertical-align: super;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
 
 /* =============================================================================
    INTRO
@@ -279,6 +286,231 @@
   font-weight: 300;
   line-height: 1.8;
   color: rgba(255,255,255,0.55);
+}
+
+.pp-final-caption--light .pp-final-caption__body,
+.pp-final-caption__body--dark {
+  color: var(--dark-charcoal);
+}
+
+
+/* =============================================================================
+   VIDEO SECTION
+   ============================================================================= */
+.pp-video-section {
+  background: var(--warm-black);
+  padding: var(--space-xl) 0;
+}
+
+.pp-video-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.pp-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  outline: none;
+}
+
+.pp-video-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.72) 0%, transparent 100%);
+  padding: var(--space-xl) 48px var(--space-md);
+  pointer-events: none;
+}
+
+.pp-video-caption {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
+  min-height: 1.5em;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .pp-video-caption-bar { padding-inline: 20px; }
+  .pp-video-caption { font-size: 18px; }
+}
+
+
+/* =============================================================================
+   SCROLL GALLERY — sticky viewport, front slides up over back on scroll
+   ============================================================================= */
+.pp-scroll-gallery {
+  position: relative;
+  height: 280vh;           /* scroll runway */
+  background: var(--warm-black); /* dark bg so any runway bleed matches sticky content */
+  /* NO overflow:hidden — that would break sticky */
+}
+
+.pp-scroll-gallery__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;        /* clips the sliding front panel */
+}
+
+.pp-scroll-gallery__back {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.pp-scroll-gallery__back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.pp-scroll-gallery__front {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+.pp-scroll-gallery__item {
+  overflow: hidden;
+}
+
+.pp-scroll-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .pp-scroll-gallery { height: 380vh; }
+  .pp-scroll-gallery__front { grid-template-columns: 1fr; }
+}
+
+
+/* =============================================================================
+   SPLIT LAYOUT — image + text side by side
+   ============================================================================= */
+.pp-split {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  align-items: stretch;
+}
+
+.pp-split__img {
+  overflow: hidden;
+  background: var(--dark-charcoal);
+  aspect-ratio: 4/3;
+}
+
+.pp-split__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.pp-split__img:hover img {
+  transform: scale(1.04);
+}
+
+.pp-split__text {
+  background: rgba(255,255,255,0.04);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.pp-split__block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.pp-split__label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.pp-split__body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.65);
+}
+
+
+/* =============================================================================
+   DESIGN FEATURES GRID
+   ============================================================================= */
+.pp-features {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+}
+
+.pp-feature {
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--warm-black);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.pp-feature__title {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.pp-feature__subtitle {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.pp-feature__body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.58);
 }
 
 
@@ -519,7 +751,9 @@
 .pp-reel__header,
 .pp-reel__card,
 .pp-next__inner,
-.pp-final-caption {
+.pp-final-caption,
+.pp-split,
+.pp-feature {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.7s ease, transform 0.7s ease;
@@ -534,10 +768,15 @@
 .pp-reel__header.is-visible,
 .pp-reel__card.is-visible,
 .pp-next__inner.is-visible,
-.pp-final-caption.is-visible {
+.pp-final-caption.is-visible,
+.pp-split.is-visible,
+.pp-feature.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+.pp-feature:nth-child(2) { transition-delay: 0.1s; }
+.pp-feature:nth-child(3) { transition-delay: 0.2s; }
 
 .pp-reel__card:nth-child(2) { transition-delay: 0.06s; }
 .pp-reel__card:nth-child(3) { transition-delay: 0.12s; }
@@ -600,5 +839,21 @@
   .pp-grid--2,
   .pp-grid--3 {
     grid-template-columns: 1fr;
+  }
+
+  .pp-split {
+    padding-inline: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .pp-split__img { aspect-ratio: 16/9; }
+
+  .pp-features {
+    padding-inline: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .pp-final-caption {
+    padding-inline: 20px;
   }
 }

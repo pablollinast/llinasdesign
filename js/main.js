@@ -91,7 +91,7 @@
     '.proj-item, .proj-header__eyebrow, .proj-header__heading, .proj-header__sub,' +
     '.pp-intro__inner, .pp-section__header, .pp-grid__item, .pp-single-img, .pp-full-bleed-img, .pp-next__inner,' +
     '.pp-reel__header, .pp-reel__card,' +
-    '.pp-final-caption'
+    '.pp-final-caption, .pp-split, .pp-features, .pp-feature'
   );
   if (!targets.length) return;
 
@@ -215,4 +215,54 @@
 
   document.addEventListener('mouseleave', () => cursor.classList.add('cursor--hidden'));
   document.addEventListener('mouseenter', () => cursor.classList.remove('cursor--hidden'));
+})();
+
+
+/* ---------------------------------------------------------------------------
+   8. SCROLL GALLERY — front pair slides up over sticky back image
+   --------------------------------------------------------------------------- */
+(function initScrollGallery() {
+  const gallery = document.querySelector('.pp-scroll-gallery');
+  if (!gallery) return;
+
+  const front = gallery.querySelector('.pp-scroll-gallery__front');
+
+  function update() {
+    const rect     = gallery.getBoundingClientRect();
+    const scrollable = rect.height - window.innerHeight;
+    const raw      = -rect.top / scrollable;           // 0 → 1 as gallery scrolls
+    const progress = Math.max(0, Math.min(1, raw));
+
+    // Front images start sliding in immediately, fully in at 60%
+    const start = 0.05, end = 0.60;
+    const slide = Math.max(0, Math.min(1, (progress - start) / (end - start)));
+    front.style.transform = `translateY(${(1 - slide) * 100}%)`;
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
+})();
+
+
+/* ---------------------------------------------------------------------------
+   9. VIDEO CAPTIONS — sync WebVTT track to custom caption display
+   --------------------------------------------------------------------------- */
+(function initVideoCaptions() {
+  const video   = document.getElementById('hypnos-video');
+  const display = document.getElementById('hypnos-caption');
+  const trackEl = document.getElementById('hypnos-track');
+  if (!video || !display || !trackEl) return;
+
+  function syncCaption() {
+    const track = trackEl.track;
+    track.mode = 'hidden'; // prevent browser default rendering
+    const cues = track.activeCues;
+    display.textContent = cues && cues.length
+      ? cues[0].text.replace(/\n/g, ' ')
+      : '';
+  }
+
+  video.addEventListener('timeupdate', syncCaption);
+  trackEl.addEventListener('load', () => { trackEl.track.mode = 'hidden'; });
 })();

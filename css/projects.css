@@ -20,7 +20,7 @@
 
 .proj-header__eyebrow {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 24px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;

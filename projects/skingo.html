@@ -10,85 +10,16 @@
   <link rel="stylesheet" href="../css/project-page.css">
   <style>
 
-    /* ── HERO: contain so full hand is visible ─────────────────── */
+    /* 1. Hero: contain so full hand visible */
     .pp-hero__img--contain {
       object-fit: contain;
       object-position: center;
     }
 
-    /* ── INTRO: overview label + 2x2 meta + body text ──────────── */
-    .sk-intro {
-      background: var(--off-white);
-      padding: var(--space-xl) 0;
-    }
-
-    .sk-intro__inner {
-      max-width: 1100px;
-      margin-inline: auto;
-      padding-inline: 48px;
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: var(--space-xl);
-      align-items: start;
-    }
-
-    .sk-intro__left {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-    }
-
-    .sk-overview-label {
-      font-family: var(--font-body);
-      font-size: 10px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-    }
-
-    .sk-meta-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-sm) var(--space-lg);
-    }
-
-    .sk-meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .sk-meta-label {
-      font-family: var(--font-body);
-      font-size: 10px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-    }
-
-    .sk-meta-value {
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--warm-black);
-      line-height: 1.4;
-    }
-
-    .sk-intro__body {
-      font-family: var(--font-heading);
-      font-size: clamp(16px, 1.4vw, 20px);
-      font-weight: 300;
-      line-height: 1.65;
-      letter-spacing: -0.01em;
-      color: var(--dark-charcoal);
-    }
-
-    /* ── PROBLEM / SOLUTION ────────────────────────────────────── */
+    /* 3. Problem/Solution: bigger labels */
     .sk-problem {
       background: var(--warm-black);
-      padding: var(--space-xl) 0;
+      padding: var(--space-lg) 0; /* 4. reduced padding */
     }
 
     .sk-problem__inner {
@@ -101,7 +32,7 @@
     }
 
     .sk-problem__col {
-      padding: var(--space-xl);
+      padding: var(--space-lg) var(--space-xl);
       border-left: 0.5px solid rgba(255,255,255,0.1);
     }
 
@@ -115,26 +46,29 @@
     }
 
     .sk-problem__label {
-      font-family: var(--font-body);
-      font-size: 10px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 2.5vw, 40px); /* 3. bigger */
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--white);
       margin-bottom: var(--space-md);
       display: block;
     }
 
     .sk-problem__body {
-      font-family: var(--font-heading);
-      font-size: clamp(18px, 1.6vw, 24px);
+      font-family: var(--font-body);
+      font-size: clamp(14px, 1.1vw, 16px);
       font-weight: 300;
-      line-height: 1.6;
-      letter-spacing: -0.01em;
-      color: rgba(255,255,255,0.75);
+      line-height: 1.75;
+      color: rgba(255,255,255,0.58);
     }
 
-    /* ── PATENTED GEOMETRY — full bleed with overlay ───────────── */
+    /* 5. Scroll gallery: single front image */
+    #scroll-gallery-front {
+      grid-template-columns: 1fr;
+    }
+
+    /* Patented Geometry */
     .sk-patent {
       position: relative;
       min-height: 80vh;
@@ -158,8 +92,7 @@
     .sk-patent__overlay {
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.2) 60%, transparent 100%);
+      background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.2) 60%, transparent 100%);
     }
 
     .sk-patent__content {
@@ -199,24 +132,12 @@
       max-width: 560px;
     }
 
-    /* ── TEXTURE CAPTION ───────────────────────────────────────── */
-    .sk-texture-caption {
-      background: var(--warm-black);
-      padding: var(--space-md) 48px;
-      max-width: 1400px;
-      margin-inline: auto;
+    /* 8. Fix grey bars: remove padding-inline from pp-features */
+    .pp-features {
+      padding-inline: 0;
     }
 
-    .sk-texture-caption p {
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      color: rgba(255,255,255,0.35);
-      text-align: center;
-    }
-
-    /* ── IN USE — final hero ───────────────────────────────────── */
+    /* In Use */
     .sk-inuse {
       position: relative;
       min-height: 80vh;
@@ -240,8 +161,7 @@
     .sk-inuse__overlay {
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(to top, rgba(10,10,10,0.80) 0%, rgba(10,10,10,0.1) 55%, transparent 100%);
+      background: linear-gradient(to top, rgba(10,10,10,0.80) 0%, rgba(10,10,10,0.1) 55%, transparent 100%);
     }
 
     .sk-inuse__content {
@@ -270,13 +190,8 @@
       color: rgba(255,255,255,0.7);
     }
 
-    /* ── RESPONSIVE ────────────────────────────────────────────── */
+    /* Responsive */
     @media (max-width: 768px) {
-      .sk-intro__inner {
-        grid-template-columns: 1fr;
-        padding-inline: 20px;
-        gap: var(--space-lg);
-      }
       .sk-problem__inner {
         grid-template-columns: 1fr;
         padding-inline: 20px;
@@ -289,7 +204,6 @@
       .sk-problem__col:first-child { border-top: none; }
       .sk-patent__content,
       .sk-inuse__content { padding: var(--space-lg) 20px; }
-      .sk-texture-caption { padding-inline: 20px; }
     }
 
   </style>
@@ -315,9 +229,9 @@
 
 
   <!-- =========================================================
-       1. HERO
+       1. HERO — no data-nav-light so nav stays white on dark bg
        ========================================================= -->
-  <section class="pp-hero" aria-label="SkinGo" data-nav-light>
+  <section class="pp-hero" aria-label="SkinGo">
     <img src="../images/skingo/skingo-hero.png"
          alt="SkinGo® — precision dermoabrasion glove"
          class="pp-hero__img pp-hero__img--contain"
@@ -331,38 +245,37 @@
 
 
   <!-- =========================================================
-       2. INTRO
+       2. INTRO — matches Hypnos pp-intro pattern, no Overview label
        ========================================================= -->
-  <section class="sk-intro" data-nav-light>
-    <div class="sk-intro__inner">
-      <div class="sk-intro__left">
-        <span class="sk-overview-label">Overview</span>
-        <div class="sk-meta-grid">
-          <div class="sk-meta-item">
-            <span class="sk-meta-label">Year</span>
-            <span class="sk-meta-value">2023</span>
-          </div>
-          <div class="sk-meta-item">
-            <span class="sk-meta-label">Type</span>
-            <span class="sk-meta-value">Medical Device</span>
-          </div>
-          <div class="sk-meta-item">
-            <span class="sk-meta-label">Patent</span>
-            <span class="sk-meta-value">WO2022043956A1</span>
-          </div>
-          <div class="sk-meta-item">
-            <span class="sk-meta-label">Location</span>
-            <span class="sk-meta-value">Bogotá</span>
-          </div>
+  <section class="pp-intro" data-nav-light>
+    <div class="pp-intro__inner">
+      <div class="pp-intro__meta">
+        <div class="pp-meta-item">
+          <span class="pp-meta-label">Year</span>
+          <span class="pp-meta-value">2023</span>
+        </div>
+        <div class="pp-meta-item">
+          <span class="pp-meta-label">Type</span>
+          <span class="pp-meta-value">Medical Device</span>
+        </div>
+        <div class="pp-meta-item">
+          <span class="pp-meta-label">Patent</span>
+          <span class="pp-meta-value">WO2022043956A1</span>
+        </div>
+        <div class="pp-meta-item">
+          <span class="pp-meta-label">Location</span>
+          <span class="pp-meta-value">Bogotá</span>
         </div>
       </div>
-      <p class="sk-intro__body">A surgical glove with integrated 3D-printed micro-patterned dermabrasion surfaces for burn wound debridement. SkinGo replaces aggressive tools with a tactile, ergonomic interface — enabling surgeons to remove necrotic tissue precisely, preserving healthy skin, reducing infection risk, and improving healing outcomes for burn patients.</p>
+      <div class="pp-intro__text">
+        <p class="pp-intro__body">A surgical glove with integrated 3D-printed micro-patterned dermabrasion surfaces for burn wound debridement. SkinGo replaces aggressive tools with a tactile, ergonomic interface — enabling surgeons to remove necrotic tissue precisely, preserving healthy skin, reducing infection risk, and improving healing outcomes for burn patients.</p>
+      </div>
     </div>
   </section>
 
 
   <!-- =========================================================
-       3. PROBLEM → SOLUTION
+       3 & 4. PROBLEM → SOLUTION
        ========================================================= -->
   <section class="sk-problem">
     <div class="sk-problem__inner">
@@ -379,7 +292,7 @@
 
 
   <!-- =========================================================
-       4. THE PRODUCT — scroll gallery
+       4. THE PRODUCT — scroll gallery, single front image
        ========================================================= -->
   <section class="pp-section pp-section--light" style="padding-bottom:0;" data-nav-light>
     <div class="pp-section__header pp-section__header--dark">
@@ -393,12 +306,10 @@
       <div class="pp-scroll-gallery__back">
         <img src="../images/skingo/skingo-render-side.png" alt="SkinGo — side render" loading="lazy">
       </div>
+      <!-- 5. Single front image only -->
       <div class="pp-scroll-gallery__front" id="scroll-gallery-front">
         <div class="pp-scroll-gallery__item">
           <img src="../images/skingo/skingo-render-palm.png" alt="SkinGo — palm render" loading="lazy">
-        </div>
-        <div class="pp-scroll-gallery__item">
-          <img src="../images/skingo/skingo-render-palm.png" alt="SkinGo — palm render detail" loading="lazy">
         </div>
       </div>
     </div>
@@ -423,7 +334,7 @@
 
 
   <!-- =========================================================
-       6. TEXTURE DETAIL — 2-col grid
+       6. TEXTURE DETAIL — 2-col grid (no caption)
        ========================================================= -->
   <section class="pp-section pp-section--dark">
     <div class="pp-section__header">
@@ -438,14 +349,11 @@
         <img src="../images/skingo/skingo-macro-02.png" alt="SkinGo — bristle texture detail" loading="lazy">
       </div>
     </div>
-    <div class="sk-texture-caption">
-      <p>Micro-patterned bristle geometry — precision without trauma.</p>
-    </div>
   </section>
 
 
   <!-- =========================================================
-       7. DESIGN FEATURES — 3-col
+       7. DESIGN FEATURES — flush to images above, no grey bars
        ========================================================= -->
   <section class="pp-section pp-section--dark" style="padding-top:0;">
     <div class="pp-features">
@@ -469,7 +377,7 @@
 
 
   <!-- =========================================================
-       8. IN USE — full bleed final
+       8. IN USE — full bleed clinical results
        ========================================================= -->
   <section class="sk-inuse">
     <img src="../images/skingo/skingo-context.png"

@@ -7,124 +7,59 @@
   <meta name="description" content="SkinGo — a surgical glove with integrated 3D-printed dermabrasion surfaces for burn wound debridement. Medical Device, 2023.">
   <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/project-page.css">
   <style>
 
-    /* ── HERO ──────────────────────────────────────────────────── */
-    .sk-hero {
-      position: relative;
-      height: 100vh;
-      min-height: 560px;
-      background: var(--warm-black);
-      overflow: hidden;
-      display: flex;
-      align-items: flex-end;
+    /* ── HERO: contain so full hand is visible ─────────────────── */
+    .pp-hero__img--contain {
+      object-fit: contain;
+      object-position: center;
     }
 
-    .sk-hero__img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      opacity: 0.80;
-      animation: heroImageReveal 8s ease both;
-    }
-
-    .sk-hero__overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.75) 0%,
-        rgba(0,0,0,0.10) 55%,
-        transparent 100%
-      );
-    }
-
-    .sk-hero__content {
-      position: relative;
-      z-index: 2;
-      padding: var(--space-lg);
-      max-width: 900px;
-      animation: fadeUp 0.9s ease 0.2s both;
-    }
-
-    .sk-hero__eyebrow {
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: var(--space-xs);
-    }
-
-    .sk-hero__title {
-      font-family: var(--font-heading);
-      font-size: clamp(56px, 7vw, 96px);
-      font-weight: 300;
-      line-height: 1.0;
-      letter-spacing: -0.02em;
-      color: var(--white);
-    }
-
-    /* ── INTRO ─────────────────────────────────────────────────── */
+    /* ── INTRO: overview label + 2x2 meta + body text ──────────── */
     .sk-intro {
       background: var(--off-white);
       padding: var(--space-xl) 0;
     }
 
     .sk-intro__inner {
-      max-width: 1400px;
+      max-width: 1100px;
       margin-inline: auto;
       padding-inline: 48px;
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 260px 1fr;
       gap: var(--space-xl);
+      align-items: start;
     }
 
-    .sk-intro__label {
+    .sk-intro__left {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .sk-overview-label {
       font-family: var(--font-body);
-      font-size: 14px;
+      font-size: 10px;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       color: var(--accent);
-      padding-top: 4px;
     }
 
-    .sk-intro__body {
-      font-family: var(--font-heading);
-      font-size: clamp(20px, 2vw, 28px);
-      font-weight: 300;
-      line-height: 1.55;
-      letter-spacing: -0.01em;
-      color: var(--dark-charcoal);
+    .sk-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-sm) var(--space-lg);
     }
 
-    /* ── META ──────────────────────────────────────────────────── */
-    .sk-meta {
-      background: var(--off-white);
-      border-top: 0.5px solid var(--border);
-      padding: var(--space-lg) 0;
-    }
-
-    .sk-meta__inner {
-      max-width: 1400px;
-      margin-inline: auto;
-      padding-inline: 48px;
-      display: flex;
-      gap: var(--space-xl);
-    }
-
-    .sk-meta__item {
+    .sk-meta-item {
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
 
-    .sk-meta__label {
+    .sk-meta-label {
       font-family: var(--font-body);
       font-size: 10px;
       font-weight: 500;
@@ -133,25 +68,228 @@
       color: var(--accent);
     }
 
-    .sk-meta__value {
+    .sk-meta-value {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--warm-black);
+      line-height: 1.4;
+    }
+
+    .sk-intro__body {
+      font-family: var(--font-heading);
+      font-size: clamp(16px, 1.4vw, 20px);
+      font-weight: 300;
+      line-height: 1.65;
+      letter-spacing: -0.01em;
+      color: var(--dark-charcoal);
+    }
+
+    /* ── PROBLEM / SOLUTION ────────────────────────────────────── */
+    .sk-problem {
+      background: var(--warm-black);
+      padding: var(--space-xl) 0;
+    }
+
+    .sk-problem__inner {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .sk-problem__col {
+      padding: var(--space-xl);
+      border-left: 0.5px solid rgba(255,255,255,0.1);
+    }
+
+    .sk-problem__col:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .sk-problem__col:last-child {
+      padding-right: 0;
+    }
+
+    .sk-problem__label {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: var(--space-md);
+      display: block;
+    }
+
+    .sk-problem__body {
+      font-family: var(--font-heading);
+      font-size: clamp(18px, 1.6vw, 24px);
+      font-weight: 300;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ── PATENTED GEOMETRY — full bleed with overlay ───────────── */
+    .sk-patent {
+      position: relative;
+      min-height: 80vh;
+      background: var(--warm-black);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .sk-patent__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .sk-patent__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.2) 60%, transparent 100%);
+    }
+
+    .sk-patent__content {
+      position: relative;
+      z-index: 2;
+      padding: var(--space-xl) 48px;
+      max-width: 720px;
+    }
+
+    .sk-patent__eyebrow {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+
+    .sk-patent__heading {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: var(--space-md);
+    }
+
+    .sk-patent__body {
       font-family: var(--font-body);
       font-size: 14px;
       font-weight: 300;
-      color: var(--warm-black);
+      line-height: 1.8;
+      color: rgba(255,255,255,0.6);
+      max-width: 560px;
     }
 
+    /* ── TEXTURE CAPTION ───────────────────────────────────────── */
+    .sk-texture-caption {
+      background: var(--warm-black);
+      padding: var(--space-md) 48px;
+      max-width: 1400px;
+      margin-inline: auto;
+    }
+
+    .sk-texture-caption p {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+    }
+
+    /* ── IN USE — final hero ───────────────────────────────────── */
+    .sk-inuse {
+      position: relative;
+      min-height: 80vh;
+      background: var(--warm-black);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .sk-inuse__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .sk-inuse__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(10,10,10,0.80) 0%, rgba(10,10,10,0.1) 55%, transparent 100%);
+    }
+
+    .sk-inuse__content {
+      position: relative;
+      z-index: 2;
+      padding: var(--space-xl) 48px;
+      max-width: 760px;
+    }
+
+    .sk-inuse__eyebrow {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+
+    .sk-inuse__body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────────────── */
     @media (max-width: 768px) {
       .sk-intro__inner {
         grid-template-columns: 1fr;
         padding-inline: 20px;
-        gap: var(--space-md);
+        gap: var(--space-lg);
       }
-      .sk-meta__inner {
+      .sk-problem__inner {
+        grid-template-columns: 1fr;
         padding-inline: 20px;
-        flex-wrap: wrap;
-        gap: var(--space-md);
       }
-      .sk-hero__content { padding: var(--space-md) 20px; }
+      .sk-problem__col {
+        border-left: none;
+        border-top: 0.5px solid rgba(255,255,255,0.1);
+        padding: var(--space-lg) 0;
+      }
+      .sk-problem__col:first-child { border-top: none; }
+      .sk-patent__content,
+      .sk-inuse__content { padding: var(--space-lg) 20px; }
+      .sk-texture-caption { padding-inline: 20px; }
     }
 
   </style>
@@ -177,52 +315,173 @@
 
 
   <!-- =========================================================
-       HERO
+       1. HERO
        ========================================================= -->
-  <section class="sk-hero" aria-label="SkinGo" data-nav-light>
-    <img src="../images/skingo-card.png" alt="SkinGo — dermabrasion glove" class="sk-hero__img" role="presentation">
-    <div class="sk-hero__overlay" aria-hidden="true"></div>
-    <div class="sk-hero__content">
-      <p class="sk-hero__eyebrow">Medical Device · 2023 · Pat. WO2022043956A1</p>
-      <h1 class="sk-hero__title">SkinGo</h1>
+  <section class="pp-hero" aria-label="SkinGo" data-nav-light>
+    <img src="../images/skingo/skingo-hero.png"
+         alt="SkinGo® — precision dermoabrasion glove"
+         class="pp-hero__img pp-hero__img--contain"
+         role="presentation">
+    <div class="pp-hero__overlay" aria-hidden="true"></div>
+    <div class="pp-hero__content">
+      <p class="pp-hero__eyebrow">Medical Device · 2023 · Pat. WO2022/043956 A1</p>
+      <h1 class="pp-hero__title">SkinGo</h1>
     </div>
   </section>
 
 
   <!-- =========================================================
-       INTRO
+       2. INTRO
        ========================================================= -->
   <section class="sk-intro" data-nav-light>
     <div class="sk-intro__inner">
-      <p class="sk-intro__label">Overview</p>
-      <p class="sk-intro__body">A surgical glove with integrated 3D-printed micro-patterned dermabrasion surfaces for burn wound debridement. SkinGo replaces aggressive tools with a tactile, ergonomic interface, enabling surgeons to remove necrotic tissue precisely — preserving healthy skin, reducing infection risk, and improving healing outcomes for burn patients.</p>
+      <div class="sk-intro__left">
+        <span class="sk-overview-label">Overview</span>
+        <div class="sk-meta-grid">
+          <div class="sk-meta-item">
+            <span class="sk-meta-label">Year</span>
+            <span class="sk-meta-value">2023</span>
+          </div>
+          <div class="sk-meta-item">
+            <span class="sk-meta-label">Type</span>
+            <span class="sk-meta-value">Medical Device</span>
+          </div>
+          <div class="sk-meta-item">
+            <span class="sk-meta-label">Patent</span>
+            <span class="sk-meta-value">WO2022043956A1</span>
+          </div>
+          <div class="sk-meta-item">
+            <span class="sk-meta-label">Location</span>
+            <span class="sk-meta-value">Bogotá</span>
+          </div>
+        </div>
+      </div>
+      <p class="sk-intro__body">A surgical glove with integrated 3D-printed micro-patterned dermabrasion surfaces for burn wound debridement. SkinGo replaces aggressive tools with a tactile, ergonomic interface — enabling surgeons to remove necrotic tissue precisely, preserving healthy skin, reducing infection risk, and improving healing outcomes for burn patients.</p>
     </div>
   </section>
 
 
   <!-- =========================================================
-       META
+       3. PROBLEM → SOLUTION
        ========================================================= -->
-  <div class="sk-meta" data-nav-light>
-    <div class="sk-meta__inner">
-      <div class="sk-meta__item">
-        <span class="sk-meta__label">Year</span>
-        <span class="sk-meta__value">2023</span>
+  <section class="sk-problem">
+    <div class="sk-problem__inner">
+      <div class="sk-problem__col">
+        <span class="sk-problem__label">Problem</span>
+        <p class="sk-problem__body">Burn patients face severe skin degradation, leading to infections, delayed healing, and increased scarring. Current debridement tools are aggressive, causing trauma to healthy tissue and complicating recovery.</p>
       </div>
-      <div class="sk-meta__item">
-        <span class="sk-meta__label">Type</span>
-        <span class="sk-meta__value">Medical Device</span>
+      <div class="sk-problem__col">
+        <span class="sk-problem__label">Solution</span>
+        <p class="sk-problem__body">A less traumatic debridement tool that minimizes tissue damage, providing tactile feedback and improved maneuverability for a more precise and less invasive procedure.</p>
       </div>
-      <div class="sk-meta__item">
-        <span class="sk-meta__label">Patent</span>
-        <span class="sk-meta__value">WO2022043956A1</span>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       4. THE PRODUCT — scroll gallery
+       ========================================================= -->
+  <section class="pp-section pp-section--light" style="padding-bottom:0;" data-nav-light>
+    <div class="pp-section__header pp-section__header--dark">
+      <p class="pp-section__eyebrow pp-section__eyebrow--dark">The Product</p>
+      <h2 class="pp-section__heading pp-section__heading--dark">Precision<br>Dermoabrasion Glove</h2>
+    </div>
+  </section>
+
+  <div class="pp-scroll-gallery" data-nav-light>
+    <div class="pp-scroll-gallery__sticky">
+      <div class="pp-scroll-gallery__back">
+        <img src="../images/skingo/skingo-render-side.png" alt="SkinGo — side render" loading="lazy">
       </div>
-      <div class="sk-meta__item">
-        <span class="sk-meta__label">Location</span>
-        <span class="sk-meta__value">Bogotá</span>
+      <div class="pp-scroll-gallery__front" id="scroll-gallery-front">
+        <div class="pp-scroll-gallery__item">
+          <img src="../images/skingo/skingo-render-palm.png" alt="SkinGo — palm render" loading="lazy">
+        </div>
+        <div class="pp-scroll-gallery__item">
+          <img src="../images/skingo/skingo-render-palm.png" alt="SkinGo — palm render detail" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
+
+
+  <!-- =========================================================
+       5. PATENTED GEOMETRY — full bleed
+       ========================================================= -->
+  <section class="sk-patent">
+    <img src="../images/skingo/skingo-patent-macro.png"
+         alt="SkinGo — patented radial abrasion geometry"
+         class="sk-patent__img"
+         loading="lazy">
+    <div class="sk-patent__overlay" aria-hidden="true"></div>
+    <div class="sk-patent__content">
+      <span class="sk-patent__eyebrow">Debridement Design · Pat. WO2022043956A1</span>
+      <h2 class="sk-patent__heading">Patented Abrasive<br>Geometry</h2>
+      <p class="sk-patent__body">The debridement surface of SkinGo is inspired by micro-patterned geometry, reimagined for surgical precision. Its patented radial arrangement of abrasive nodes ensures effective abrasion while protecting healthy skin — offering precision without trauma.</p>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       6. TEXTURE DETAIL — 2-col grid
+       ========================================================= -->
+  <section class="pp-section pp-section--dark">
+    <div class="pp-section__header">
+      <p class="pp-section__eyebrow">Surface Detail</p>
+      <h2 class="pp-section__heading">Micro-patterned<br>Bristle Geometry</h2>
+    </div>
+    <div class="pp-grid pp-grid--2">
+      <div class="pp-grid__item">
+        <img src="../images/skingo/skingo-macro.png" alt="SkinGo — bristle texture macro" loading="lazy">
+      </div>
+      <div class="pp-grid__item">
+        <img src="../images/skingo/skingo-macro-02.png" alt="SkinGo — bristle texture detail" loading="lazy">
+      </div>
+    </div>
+    <div class="sk-texture-caption">
+      <p>Micro-patterned bristle geometry — precision without trauma.</p>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       7. DESIGN FEATURES — 3-col
+       ========================================================= -->
+  <section class="pp-section pp-section--dark" style="padding-top:0;">
+    <div class="pp-features">
+      <div class="pp-feature">
+        <p class="pp-feature__subtitle">01</p>
+        <h3 class="pp-feature__title">Abrasion Precision</h3>
+        <p class="pp-feature__body">Designed with 3D-printed technology, the pattern is inspired by micro-patterned geometry reimagined for surgical precision. The specific arrangement of bristles allows targeted removal of damaged skin while minimizing harm to surrounding healthy tissue.</p>
+      </div>
+      <div class="pp-feature">
+        <p class="pp-feature__subtitle">02</p>
+        <h3 class="pp-feature__title">Ergonomic Design</h3>
+        <p class="pp-feature__body">User-friendly features ensure ease of use for medical professionals, reducing procedure time and improving patient comfort. The ideal balance of abrasion and flexibility allows a better reach of complex areas, contouring to the body's surface for optimal contact.</p>
+      </div>
+      <div class="pp-feature">
+        <p class="pp-feature__subtitle">03</p>
+        <h3 class="pp-feature__title">Enhanced Healing</h3>
+        <p class="pp-feature__body">By enhancing debridement precision, SkinGo prepares the wound bed for re-epithelialization and skin grafting. It promotes smoother regeneration by creating an optimal surface for new cell growth and graft adhesion — reducing post-op complications.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       8. IN USE — full bleed final
+       ========================================================= -->
+  <section class="sk-inuse">
+    <img src="../images/skingo/skingo-context.png"
+         alt="SkinGo — in surgical use"
+         class="sk-inuse__img"
+         loading="lazy">
+    <div class="sk-inuse__overlay" aria-hidden="true"></div>
+    <div class="sk-inuse__content">
+      <span class="sk-inuse__eyebrow">Clinical Results</span>
+      <p class="sk-inuse__body">The device has demonstrated significant improvements in patient outcomes, including faster healing times, reduced risk of infection, and better aesthetic and functional recovery of the treated areas. Its effectiveness has transformed the care and rehabilitation process for burn patients — restoring both their confidence and quality of life.</p>
+    </div>
+  </section>
 
 
   <!-- =========================================================

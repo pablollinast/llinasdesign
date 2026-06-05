@@ -47,10 +47,10 @@
 
     .sk-problem__label {
       font-family: var(--font-heading);
-      font-size: clamp(28px, 2.5vw, 40px); /* 3. bigger */
+      font-size: clamp(28px, 2.5vw, 40px);
       font-weight: 300;
       letter-spacing: -0.02em;
-      color: var(--white);
+      color: var(--accent); /* 2. orange */
       margin-bottom: var(--space-md);
       display: block;
     }
@@ -63,9 +63,14 @@
       color: rgba(255,255,255,0.58);
     }
 
-    /* 5. Scroll gallery: single front image */
+    /* 5. Scroll gallery: single front image, show full hand */
     #scroll-gallery-front {
       grid-template-columns: 1fr;
+    }
+
+    /* 3. Palm image: anchor top so fingers aren't cut */
+    .pp-scroll-gallery__front .pp-scroll-gallery__item img {
+      object-position: center top;
     }
 
     /* Patented Geometry */
@@ -257,10 +262,6 @@
         <div class="pp-meta-item">
           <span class="pp-meta-label">Type</span>
           <span class="pp-meta-value">Medical Device</span>
-        </div>
-        <div class="pp-meta-item">
-          <span class="pp-meta-label">Patent</span>
-          <span class="pp-meta-value">WO2022043956A1</span>
         </div>
         <div class="pp-meta-item">
           <span class="pp-meta-label">Location</span>

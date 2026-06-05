@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AcetGard — Pablo Llinas</title>
+  <meta name="description" content="AcetGard — a protective barrier for total hip replacement surgeries. Medical Device, 2022. Pat. CO2021015180A1.">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+
+    /* Hero */
+    .ag-hero {
+      position: relative;
+      height: 100vh;
+      min-height: 560px;
+      background: var(--black);
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .ag-hero__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      animation: heroImageReveal 8s ease both;
+    }
+
+    .ag-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.85) 0%,
+        rgba(0,0,0,0.10) 55%,
+        transparent 100%
+      );
+    }
+
+    .ag-hero__content {
+      position: relative;
+      z-index: 2;
+      padding: var(--space-lg);
+      max-width: 900px;
+      animation: fadeUp 0.9s ease 0.2s both;
+    }
+
+    .ag-hero__eyebrow {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: var(--space-xs);
+    }
+
+    .ag-hero__title {
+      font-family: var(--font-heading);
+      font-size: clamp(64px, 9vw, 120px);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+
+    /* Patent notice */
+    .ag-notice {
+      background: var(--warm-black);
+      padding: var(--space-lg) 0;
+    }
+
+    .ag-notice__inner {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+      text-align: center;
+    }
+
+    .ag-notice__icon {
+      color: rgba(255,255,255,0.3);
+      flex-shrink: 0;
+    }
+
+    .ag-notice__text {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    .ag-notice__text strong {
+      color: rgba(255,255,255,0.7);
+      font-weight: 400;
+    }
+
+    /* Intro */
+    .ag-intro {
+      background: var(--off-white);
+      padding: var(--space-xl) 0;
+    }
+
+    .ag-intro__inner {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: var(--space-xl);
+    }
+
+    .ag-intro__label {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      padding-top: 4px;
+    }
+
+    .ag-intro__body {
+      font-family: var(--font-heading);
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 300;
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+      color: var(--dark-charcoal);
+    }
+
+    /* Meta */
+    .ag-meta {
+      background: var(--off-white);
+      border-top: 0.5px solid var(--border);
+      padding: var(--space-lg) 0;
+    }
+
+    .ag-meta__inner {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+      display: flex;
+      gap: var(--space-xl);
+    }
+
+    .ag-meta__item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .ag-meta__label {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+    }
+
+    .ag-meta__value {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--warm-black);
+    }
+
+    @media (max-width: 768px) {
+      .ag-intro__inner {
+        grid-template-columns: 1fr;
+        padding-inline: 20px;
+        gap: var(--space-md);
+      }
+      .ag-meta__inner {
+        padding-inline: 20px;
+        flex-wrap: wrap;
+        gap: var(--space-md);
+      }
+      .ag-hero__content { padding: var(--space-md) 20px; }
+      .ag-notice__inner { padding-inline: 20px; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <a href="../index.html" class="nav__logo" aria-label="Pablo Llinas — Home">
+      <img src="../images/logo-pl-light.png" class="nav__logo-img nav__logo-img--light" alt="PL">
+      <img src="../images/logo-pl-dark.png"  class="nav__logo-img nav__logo-img--dark"  alt="PL">
+    </a>
+    <nav aria-label="Primary navigation">
+      <ul class="nav__links">
+        <li><a href="../index.html#about"   class="nav__link">About</a></li>
+        <li><a href="../projects.html"      class="nav__link">Work</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="../cv.html"            class="nav__link">CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+  <section class="ag-hero" aria-label="AcetGard">
+    <img src="../images/hero-acetgard.png"
+         alt="AcetGard — acetabular cup positioning and protective device"
+         class="ag-hero__img"
+         role="presentation">
+    <div class="ag-hero__overlay" aria-hidden="true"></div>
+    <div class="ag-hero__content">
+      <p class="ag-hero__eyebrow">Medical Device · HED · Pat. CO2021015180A1 · 2022</p>
+      <h1 class="ag-hero__title">AcetGard</h1>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       INTRO
+       ========================================================= -->
+  <section class="ag-intro" data-nav-light>
+    <div class="ag-intro__inner">
+      <p class="ag-intro__label">Overview</p>
+      <p class="ag-intro__body">A protective barrier for total hip replacement surgeries. AcetGard reduces bacterial transfer by preventing contact between implants, surgical tools, and the incision site — improving safety and precision in one of orthopedics' most common procedures.</p>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       META
+       ========================================================= -->
+  <div class="ag-meta" data-nav-light>
+    <div class="ag-meta__inner">
+      <div class="ag-meta__item">
+        <span class="ag-meta__label">Year</span>
+        <span class="ag-meta__value">2022</span>
+      </div>
+      <div class="ag-meta__item">
+        <span class="ag-meta__label">Type</span>
+        <span class="ag-meta__value">Medical Device</span>
+      </div>
+      <div class="ag-meta__item">
+        <span class="ag-meta__label">Role</span>
+        <span class="ag-meta__value">Co-Founder · CDO</span>
+      </div>
+      <div class="ag-meta__item">
+        <span class="ag-meta__label">Company</span>
+        <span class="ag-meta__value">Health Engineering Design</span>
+      </div>
+      <div class="ag-meta__item">
+        <span class="ag-meta__label">Location</span>
+        <span class="ag-meta__value">Bogotá</span>
+      </div>
+      <div class="ag-meta__item">
+        <span class="ag-meta__label">Patent</span>
+        <span class="ag-meta__value">CO2021015180A1</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="footer" role="contentinfo" data-nav-light>
+    <div class="footer__inner">
+      <div class="footer__col">
+        <img src="../images/logo-pl-dark.png" alt="PL Design" class="footer__logo-img">
+      </div>
+      <div class="footer__col">
+        <p class="footer__tagline">Product builder &amp; systems thinker<br>based in New York.</p>
+        <p class="footer__copy">© 2026 Pablo Llinas</p>
+      </div>
+      <div class="footer__col">
+        <p class="footer__heading">Navigate</p>
+        <a href="../index.html" class="footer__link">Home</a>
+        <a href="../projects.html" class="footer__link">Work</a>
+        <a href="../cv.html" class="footer__link">CV</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__heading">Connect</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/in/pablo-llinas-tono/" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/p.llinasdesign" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162S8.597 18.163 12 18.163s6.162-2.759 6.162-6.162S15.403 5.838 12 5.838zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">Built with intention. New York, 2026.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+
+</body>
+</html>

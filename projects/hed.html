@@ -15,17 +15,54 @@
       --hed-teal: #2BC4C4;
     }
 
-    /* ── INTRO footnote ──────────────────────────────────────────── */
-    .pp-intro__footnote {
+    /* ── FROM HED — project placeholders ────────────────────────── */
+    .hed-related__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+
+    .hed-related__card {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border-radius: 2px;
+      background: #c8c8c4;
+    }
+
+    .hed-related__card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(12px) brightness(0.6);
+      transform: scale(1.05);
+    }
+
+    .hed-related__card-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .hed-related__card-lock {
+      width: 20px;
+      height: 20px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .hed-related__card-label {
       font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 300;
-      line-height: 1.8;
-      color: rgba(0,0,0,0.38);
-      margin-top: var(--space-md);
-      padding-top: var(--space-md);
-      border-top: 0.5px solid var(--border);
-      max-width: 560px;
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
     }
 
     /* ── HERO ────────────────────────────────────────────────────── */
@@ -45,7 +82,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 75% 40%;
+      object-position: 88% 40%;
       animation: heroImageReveal 8s ease both;
     }
 
@@ -90,7 +127,7 @@
     /* ── WHAT WE BUILT — 3 domains ───────────────────────────────── */
     .hed-domains {
       background: var(--warm-black);
-      padding: var(--space-xl) 0;
+      padding: var(--space-xl) 0 0;
     }
 
     .hed-domains__inner {
@@ -179,10 +216,6 @@
     }
 
     .hed-strategy__header {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: var(--space-xl);
-      align-items: start;
       margin-bottom: var(--space-xl);
       padding-bottom: var(--space-xl);
       border-bottom: 0.5px solid var(--border);
@@ -497,14 +530,32 @@
     }
 
     .hed-related__label {
-      font-family: var(--font-body);
-      font-size: 10px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--hed-teal);
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 3vw, 48px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--warm-black);
       display: block;
       margin-bottom: var(--space-lg);
+    }
+
+    /* ── PROCESS DIAGRAM IMAGE ───────────────────────────────────── */
+    .hed-process__diagram {
+      width: 100%;
+      display: block;
+      border-radius: 2px;
+      margin-bottom: var(--space-xl);
+    }
+
+    .hed-process__desc {
+      font-family: var(--font-heading);
+      font-size: clamp(18px, 1.8vw, 26px);
+      font-weight: 300;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      color: rgba(255,255,255,0.65);
+      max-width: 860px;
+      margin-bottom: var(--space-xl);
     }
 
     .hed-related__placeholder {
@@ -597,7 +648,7 @@
          role="presentation">
     <div class="hed-hero__overlay" aria-hidden="true"></div>
     <div class="hed-hero__content">
-      <p class="hed-hero__eyebrow">R&amp;D Company · Co-Founder · CDO · 2020–2025</p>
+      <p class="hed-hero__eyebrow">Company · Co-Founder &amp; CDO</p>
       <h1 class="hed-hero__title">Health<br>Engineering<br>Design</h1>
     </div>
   </section>
@@ -624,7 +675,7 @@
       </div>
       <div class="pp-intro__text">
         <p class="pp-intro__body">An R&amp;D company built to turn "night drawer ideas" into tangible products. Five years co-founding and leading design across surgical devices, medical training, and enterprise healthcare, with a team of industrial designers and biomedical engineers in Bogotá. Pioneering solutions that transform healthcare, designed and engineered with empathy.</p>
-        <p class="pp-intro__footnote">HED is an interpretation of a molecular structure. Spheres intersecting and bonding, evoking the language of biology and engineering. A visual metaphor for the company's mission: making the invisible visible, and the complex human.</p>
+        <p class="pp-intro__body" style="margin-top: var(--space-md);">HED is an interpretation of a molecular structure. Spheres intersecting and bonding, evoking the language of biology and engineering. A visual metaphor for the company's mission: making the invisible visible, and the complex human.</p>
       </div>
     </div>
   </section>
@@ -667,7 +718,7 @@
     <div class="hed-strategy__inner">
       <div class="hed-strategy__header">
         <span class="hed-strategy__eyebrow">Design Strategy &amp; Business Impact</span>
-        <h2 class="hed-strategy__heading">Aligning design with<br>real-world care needs</h2>
+        <h2 class="hed-strategy__heading" style="margin-top: var(--space-sm);">Aligning design with<br>real-world care needs</h2>
       </div>
       <div class="hed-strategy__cols">
         <div class="hed-strategy__col">
@@ -688,17 +739,11 @@
        ========================================================= -->
   <section class="hed-process">
     <div class="hed-process__inner">
-      <div class="hed-process__header">
-        <span class="hed-process__eyebrow">The HED Process</span>
-        <h2 class="hed-process__heading">A proprietary design<br>methodology</h2>
-      </div>
-      <p class="hed-process__body">A proprietary four-phase methodology that integrates clinical research, iterative design, and technology transfer. Each stage is grounded in deep context understanding and frontline collaboration, producing solutions that are patient-centered, manufacturable, and market-ready.</p>
-      <div class="hed-process__slides" aria-hidden="true">
-        <img src="../images/hed/hed-process-01-necesidad.jpg" alt="Phase 01 — Need Identification" class="hed-process__slide-img" loading="lazy">
-        <img src="../images/hed/hed-process-02-ideacion.jpg"  alt="Phase 02 — Ideation"           class="hed-process__slide-img" loading="lazy">
-        <img src="../images/hed/hed-process-03-desarrollo.jpg" alt="Phase 03 — Development"       class="hed-process__slide-img" loading="lazy">
-        <img src="../images/hed/hed-process-04-transferencia.jpg" alt="Phase 04 — Transfer"       class="hed-process__slide-img" loading="lazy">
-      </div>
+      <img src="../images/hed/hed-process-diagram.jpg"
+           alt="HED Process — Co-Creation Pathway diagram"
+           class="hed-process__diagram"
+           loading="lazy">
+      <p class="hed-process__desc">A four-phase methodology that integrates clinical research, iterative design, and technology transfer. Each stage is grounded in deep context understanding and frontline collaboration, producing solutions that are patient-centered, manufacturable, and market-ready.</p>
       <div class="hed-process__phases">
         <div class="hed-process__phase">
           <span class="hed-process__phase-num">Phase 01</span>
@@ -747,7 +792,29 @@
   <section class="hed-related" data-nav-light>
     <div class="hed-related__inner">
       <span class="hed-related__label">From HED</span>
-      <p class="hed-related__placeholder">Projects coming soon</p>
+      <div class="hed-related__grid">
+        <div class="hed-related__card">
+          <img src="../images/hed/hed-sphere-render.jpg" alt="" class="hed-related__card-img" aria-hidden="true">
+          <div class="hed-related__card-overlay">
+            <svg class="hed-related__card-lock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span class="hed-related__card-label">Pending approval</span>
+          </div>
+        </div>
+        <div class="hed-related__card">
+          <img src="../images/hed/hed-sphere-render.jpg" alt="" class="hed-related__card-img" aria-hidden="true">
+          <div class="hed-related__card-overlay">
+            <svg class="hed-related__card-lock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span class="hed-related__card-label">Pending approval</span>
+          </div>
+        </div>
+        <div class="hed-related__card">
+          <img src="../images/hed/hed-sphere-render.jpg" alt="" class="hed-related__card-img" aria-hidden="true">
+          <div class="hed-related__card-overlay">
+            <svg class="hed-related__card-lock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span class="hed-related__card-label">Pending approval</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

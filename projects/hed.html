@@ -13,7 +13,6 @@
     /* ── HED brand teal ─────────────────────────────────────────── */
     :root {
       --hed-teal: #2BC4C4;
-      --hed-teal-dark: #1a9999;
     }
 
     /* ── HERO ────────────────────────────────────────────────────── */
@@ -75,7 +74,7 @@
       color: var(--white);
     }
 
-    /* ── WHAT WE BUILT ───────────────────────────────────────────── */
+    /* ── WHAT WE BUILT — 3 domains ───────────────────────────────── */
     .hed-domains {
       background: var(--warm-black);
       padding: var(--space-xl) 0;
@@ -123,9 +122,8 @@
       border-right: 0.5px solid rgba(255,255,255,0.12);
     }
 
-    .hed-domain:last-child {
-      border-right: none;
-    }
+    .hed-domain:first-child { padding-left: 0; }
+    .hed-domain:last-child { border-right: none; padding-right: 0; }
 
     .hed-domain__number {
       font-family: var(--font-body);
@@ -156,34 +154,240 @@
       color: rgba(255,255,255,0.5);
     }
 
-    /* ── BRAND MARK SECTION ──────────────────────────────────────── */
-    .hed-brand {
-      background: var(--hed-teal);
+    /* ── DESIGN STRATEGY ─────────────────────────────────────────── */
+    .hed-strategy {
+      background: var(--off-white);
       padding: var(--space-xl) 0;
+    }
+
+    .hed-strategy__inner {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+    }
+
+    .hed-strategy__header {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .hed-strategy__eyebrow {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--hed-teal);
+      padding-top: 8px;
+    }
+
+    .hed-strategy__heading {
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--warm-black);
+      line-height: 1.15;
+    }
+
+    .hed-strategy__cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+    }
+
+    .hed-strategy__col-label {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--hed-teal);
+      display: block;
+      margin-bottom: var(--space-md);
+    }
+
+    .hed-strategy__col-body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--dark-charcoal);
+    }
+
+    .hed-strategy__stat {
+      margin-top: var(--space-xl);
+      padding-top: var(--space-xl);
+      border-top: 0.5px solid var(--border);
       display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 60vh;
-      position: relative;
+      align-items: baseline;
+      gap: var(--space-md);
+    }
+
+    .hed-strategy__stat-number {
+      font-family: var(--font-heading);
+      font-size: clamp(52px, 6vw, 88px);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      color: var(--hed-teal);
+      line-height: 1.0;
+    }
+
+    .hed-strategy__stat-label {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--dark-charcoal);
+      max-width: 280px;
+      line-height: 1.6;
+    }
+
+    /* ── HED PROCESS ─────────────────────────────────────────────── */
+    .hed-process {
+      background: var(--warm-black);
+      padding: var(--space-xl) 0;
+    }
+
+    .hed-process__inner {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+    }
+
+    .hed-process__header {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 0.5px solid rgba(255,255,255,0.12);
+    }
+
+    .hed-process__eyebrow {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--hed-teal);
+      padding-top: 8px;
+    }
+
+    .hed-process__heading {
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      line-height: 1.15;
+    }
+
+    .hed-process__body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.58);
+      max-width: 860px;
+      margin-bottom: var(--space-xl);
+    }
+
+    .hed-process__slides {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: var(--space-xl);
+      border-radius: 4px;
       overflow: hidden;
     }
 
-    .hed-brand__img {
-      position: absolute;
-      inset: 0;
+    .hed-process__slide-img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 4/3;
       object-fit: cover;
-      object-position: center;
-      opacity: 0.9;
+      object-position: center bottom;
+      display: block;
+      opacity: 0.85;
+      transition: opacity 0.3s ease;
+    }
+
+    .hed-process__slide-img:hover { opacity: 1; }
+
+    .hed-process__phases {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 0.5px solid rgba(255,255,255,0.12);
+    }
+
+    .hed-process__phase {
+      padding: var(--space-lg) var(--space-md);
+      border-right: 0.5px solid rgba(255,255,255,0.12);
+    }
+
+    .hed-process__phase:first-child { padding-left: 0; }
+    .hed-process__phase:last-child { border-right: none; padding-right: 0; }
+
+    .hed-process__phase-num {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--hed-teal);
+      display: block;
+      margin-bottom: var(--space-sm);
+    }
+
+    .hed-process__phase-title {
+      font-family: var(--font-heading);
+      font-size: clamp(16px, 1.4vw, 20px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: var(--space-sm);
+    }
+
+    .hed-process__phase-body {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── BRAND MARK — molecule fully visible, text below ────────── */
+    .hed-brand {
+      background: var(--hed-teal);
+      padding-bottom: var(--space-xl);
+    }
+
+    .hed-brand__img-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-top: var(--space-xl);
+    }
+
+    .hed-brand__img {
+      width: 55%;
+      max-width: 640px;
+      display: block;
+      object-fit: contain;
     }
 
     .hed-brand__content {
-      position: relative;
-      z-index: 2;
       text-align: center;
-      padding: var(--space-xl) 48px;
+      padding: var(--space-lg) 48px var(--space-xl);
       max-width: 640px;
+      margin: 0 auto;
     }
 
     .hed-brand__eyebrow {
@@ -215,58 +419,6 @@
       color: rgba(255,255,255,0.75);
     }
 
-    /* ── STATS ───────────────────────────────────────────────────── */
-    .hed-stats {
-      background: var(--off-white);
-      padding: var(--space-xl) 0;
-      border-top: 0.5px solid var(--border);
-    }
-
-    .hed-stats__inner {
-      max-width: 1400px;
-      margin-inline: auto;
-      padding-inline: 48px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border-top: 0.5px solid var(--border);
-    }
-
-    .hed-stat {
-      padding: var(--space-xl) var(--space-lg);
-      border-right: 0.5px solid var(--border);
-    }
-
-    .hed-stat:first-child {
-      padding-left: 0;
-    }
-
-    .hed-stat:last-child {
-      border-right: none;
-    }
-
-    .hed-stat__number {
-      font-family: var(--font-heading);
-      font-size: clamp(44px, 5vw, 72px);
-      font-weight: 300;
-      letter-spacing: -0.03em;
-      color: var(--hed-teal);
-      line-height: 1.0;
-      display: block;
-    }
-
-    .hed-stat__label {
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--warm-black);
-      opacity: 0.5;
-      margin-top: var(--space-xs);
-      display: block;
-    }
-
     /* ── TEAM PHOTO ──────────────────────────────────────────────── */
     .hed-team {
       position: relative;
@@ -291,14 +443,14 @@
     .hed-team__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.1) 55%, transparent 100%);
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 55%, transparent 100%);
     }
 
     .hed-team__content {
       position: relative;
       z-index: 2;
       padding: var(--space-xl) 48px;
-      max-width: 760px;
+      max-width: 820px;
     }
 
     .hed-team__eyebrow {
@@ -320,7 +472,7 @@
       color: rgba(255,255,255,0.7);
     }
 
-    /* ── RELATED WORK ────────────────────────────────────────────── */
+    /* ── FROM HED ────────────────────────────────────────────────── */
     .hed-related {
       background: var(--off-white);
       padding: var(--space-xl) 0;
@@ -331,10 +483,6 @@
       max-width: 1400px;
       margin-inline: auto;
       padding-inline: 48px;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: var(--space-xl);
-      align-items: start;
     }
 
     .hed-related__label {
@@ -344,72 +492,66 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--hed-teal);
-      padding-top: 6px;
+      display: block;
+      margin-bottom: var(--space-lg);
     }
 
-    .hed-related__link {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-sm);
-      text-decoration: none;
-    }
-
-    .hed-related__link-title {
+    .hed-related__placeholder {
       font-family: var(--font-heading);
-      font-size: clamp(22px, 2.2vw, 32px);
+      font-size: clamp(18px, 1.8vw, 26px);
       font-weight: 300;
       letter-spacing: -0.01em;
-      color: var(--warm-black);
-      border-bottom: 0.5px solid var(--warm-black);
-      padding-bottom: 2px;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .hed-related__link:hover .hed-related__link-title {
-      color: var(--hed-teal);
-      border-color: var(--hed-teal);
-    }
-
-    .hed-related__arrow {
-      font-size: 24px;
-      color: var(--warm-black);
-      transition: color 0.2s ease, transform 0.2s ease;
-      line-height: 1;
-    }
-
-    .hed-related__link:hover .hed-related__arrow {
-      color: var(--hed-teal);
-      transform: translateX(4px);
+      color: rgba(0,0,0,0.2);
+      font-style: italic;
     }
 
     /* ── RESPONSIVE ──────────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .hed-domains__grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 1024px) {
+      .hed-process__phases {
+        grid-template-columns: repeat(2, 1fr);
       }
+      .hed-process__phase:nth-child(2) { border-right: none; padding-right: 0; }
+      .hed-process__phase:nth-child(3) {
+        border-top: 0.5px solid rgba(255,255,255,0.12);
+        padding-left: 0;
+      }
+      .hed-process__phase:nth-child(4) {
+        border-top: 0.5px solid rgba(255,255,255,0.12);
+        border-right: none;
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hed-domains__grid { grid-template-columns: 1fr; }
       .hed-domain {
         border-right: none;
         border-bottom: 0.5px solid rgba(255,255,255,0.12);
         padding: var(--space-lg) 0;
       }
       .hed-domain:last-child { border-bottom: none; }
-      .hed-stats__inner {
-        grid-template-columns: 1fr 1fr;
-      }
-      .hed-stat:nth-child(2) { border-right: none; }
-      .hed-stat:nth-child(3) { border-top: 0.5px solid var(--border); }
-      .hed-stat:nth-child(4) { border-right: none; border-top: 0.5px solid var(--border); }
+      .hed-strategy__cols { grid-template-columns: 1fr; }
+      .hed-strategy__header { grid-template-columns: 1fr; gap: var(--space-md); }
+      .hed-process__header { grid-template-columns: 1fr; gap: var(--space-md); }
     }
 
     @media (max-width: 768px) {
       .hed-hero__content { padding: var(--space-md) 20px; }
       .hed-domains__inner,
-      .hed-stats__inner,
+      .hed-strategy__inner,
+      .hed-process__inner,
       .hed-related__inner { padding-inline: 20px; }
-      .hed-stats__inner { grid-template-columns: 1fr 1fr; }
       .hed-team__content { padding: var(--space-lg) 20px; }
-      .hed-related__inner { grid-template-columns: 1fr; gap: var(--space-md); }
-      .hed-brand__content { padding: var(--space-xl) 20px; }
+      .hed-brand__content { padding: var(--space-lg) 20px; }
+      .hed-brand__img { width: 80%; }
+      .hed-process__slides { grid-template-columns: repeat(2, 1fr); }
+      .hed-process__phases { grid-template-columns: 1fr; }
+      .hed-process__phase {
+        border-right: none;
+        border-bottom: 0.5px solid rgba(255,255,255,0.12);
+        padding: var(--space-lg) 0;
+      }
+      .hed-process__phase:last-child { border-bottom: none; }
     }
 
   </style>
@@ -435,7 +577,7 @@
 
 
   <!-- =========================================================
-       HERO — teal sphere render
+       HERO
        ========================================================= -->
   <section class="hed-hero" aria-label="Health Engineering Design">
     <img src="../images/hed/hed-sphere-render.jpg"
@@ -451,7 +593,7 @@
 
 
   <!-- =========================================================
-       INTRO — pp-intro pattern, meta left + body right
+       INTRO
        ========================================================= -->
   <section class="pp-intro" data-nav-light>
     <div class="pp-intro__inner">
@@ -474,14 +616,14 @@
         </div>
       </div>
       <div class="pp-intro__text">
-        <p class="pp-intro__body">An R&amp;D company built to turn "night drawer ideas" into tangible products. Five years co-founding and leading design across surgical devices, medical training, and enterprise healthcare — with a team of designers and biomedical engineers in Bogotá. Pioneering solutions that transform healthcare, designed and engineered with empathy.</p>
+        <p class="pp-intro__body">An R&amp;D company built to turn "night drawer ideas" into tangible products. Five years co-founding and leading design across surgical devices, medical training, and enterprise healthcare — with a team of industrial designers and biomedical engineers in Bogotá. Pioneering solutions that transform healthcare, designed and engineered with empathy.</p>
       </div>
     </div>
   </section>
 
 
   <!-- =========================================================
-       WHAT WE BUILT — 3 domains
+       THREE DOMAINS
        ========================================================= -->
   <section class="hed-domains">
     <div class="hed-domains__inner">
@@ -511,43 +653,88 @@
 
 
   <!-- =========================================================
-       BRAND MARK — teal sphere render, centered
+       DESIGN STRATEGY & BUSINESS IMPACT
        ========================================================= -->
-  <section class="hed-brand">
-    <img src="../images/hed/hed-sphere-teal.png"
-         alt="HED logo mark — 3D render"
-         class="hed-brand__img"
-         role="presentation"
-         loading="lazy">
-    <div class="hed-brand__content">
-      <span class="hed-brand__eyebrow">Brand Identity</span>
-      <h2 class="hed-brand__heading">A mark built from molecules</h2>
-      <p class="hed-brand__body">The HED logo mark is a 3D interpretation of molecular structure — spheres intersecting and bonding, evoking the language of biology and engineering. A visual metaphor for the company's mission: making the invisible visible, and the complex human.</p>
+  <section class="hed-strategy" data-nav-light>
+    <div class="hed-strategy__inner">
+      <div class="hed-strategy__header">
+        <span class="hed-strategy__eyebrow">Design Strategy &amp; Business Impact</span>
+        <h2 class="hed-strategy__heading">Aligning design with<br>real-world care needs</h2>
+      </div>
+      <div class="hed-strategy__cols">
+        <div class="hed-strategy__col">
+          <span class="hed-strategy__col-label">Context</span>
+          <p class="hed-strategy__col-body">At HED, I led the development of a design strategy rooted in deep user empathy and iterative prototyping. By embedding healthcare professionals and patients into our early discovery phases, we identified overlooked pain points in post-surgical care, infection control, and wound treatment. These insights informed a series of purpose-built products — not only clinically relevant, but emotionally intuitive for users.</p>
+        </div>
+        <div class="hed-strategy__col">
+          <span class="hed-strategy__col-label">Outcome</span>
+          <p class="hed-strategy__col-body">Through rapid iteration and in-house additive manufacturing, we transformed early concepts into validated prototypes at record speed. Our ability to co-create with clinicians, pilot test in real settings, and adapt in real time allowed us to deliver solutions that felt tailored, not templated. This design-led approach became the backbone of our business model — enabling sustained growth by consistently delivering innovation that met real-world needs.</p>
+        </div>
+      </div>
+      <div class="hed-strategy__stat">
+        <span class="hed-strategy__stat-number">90%</span>
+        <span class="hed-strategy__stat-label">Year-over-year revenue growth — driven by design as both a care and business driver.</span>
+      </div>
     </div>
   </section>
 
 
   <!-- =========================================================
-       STATS
+       THE HED PROCESS
        ========================================================= -->
-  <section class="hed-stats" data-nav-light>
-    <div class="hed-stats__inner">
-      <div class="hed-stat">
-        <span class="hed-stat__number">5</span>
-        <span class="hed-stat__label">Years operating</span>
+  <section class="hed-process">
+    <div class="hed-process__inner">
+      <div class="hed-process__header">
+        <span class="hed-process__eyebrow">The HED Process</span>
+        <h2 class="hed-process__heading">A proprietary design<br>methodology</h2>
       </div>
-      <div class="hed-stat">
-        <span class="hed-stat__number">3</span>
-        <span class="hed-stat__label">Product domains</span>
+      <p class="hed-process__body">A proprietary four-phase methodology that integrates clinical research, iterative design, and technology transfer. Each stage is grounded in deep context understanding and frontline collaboration — producing solutions that are patient-centered, manufacturable, and market-ready.</p>
+      <div class="hed-process__slides" aria-hidden="true">
+        <img src="../images/hed/hed-process-01-necesidad.jpg" alt="Phase 01 — Need Identification" class="hed-process__slide-img" loading="lazy">
+        <img src="../images/hed/hed-process-02-ideacion.jpg"  alt="Phase 02 — Ideation"           class="hed-process__slide-img" loading="lazy">
+        <img src="../images/hed/hed-process-03-desarrollo.jpg" alt="Phase 03 — Development"       class="hed-process__slide-img" loading="lazy">
+        <img src="../images/hed/hed-process-04-transferencia.jpg" alt="Phase 04 — Transfer"       class="hed-process__slide-img" loading="lazy">
       </div>
-      <div class="hed-stat">
-        <span class="hed-stat__number">+10</span>
-        <span class="hed-stat__label">Team members</span>
+      <div class="hed-process__phases">
+        <div class="hed-process__phase">
+          <span class="hed-process__phase-num">Phase 01</span>
+          <h3 class="hed-process__phase-title">Need Identification</h3>
+          <p class="hed-process__phase-body">Deep validation and understanding of the context in which the project lives — observations with clinicians, bibliographic research, and conversations with all stakeholders involved.</p>
+        </div>
+        <div class="hed-process__phase">
+          <span class="hed-process__phase-num">Phase 02</span>
+          <h3 class="hed-process__phase-title">Ideation</h3>
+          <p class="hed-process__phase-body">Development of proposals and possible concepts designed to generate a meaningful impact within the studied context. Rapid prototyping and in-house additive manufacturing drive fast iteration.</p>
+        </div>
+        <div class="hed-process__phase">
+          <span class="hed-process__phase-num">Phase 03</span>
+          <h3 class="hed-process__phase-title">Development</h3>
+          <p class="hed-process__phase-body">Materialization, specification, and construction of the proposals that show relevant validation and a promising future — in vivo testing, materials engineering, and regulatory preparation.</p>
+        </div>
+        <div class="hed-process__phase">
+          <span class="hed-process__phase-num">Phase 04</span>
+          <h3 class="hed-process__phase-title">Transfer</h3>
+          <p class="hed-process__phase-body">IP protection, patent filing, and go-to-market strategy. Clinical validation, user training, and deployment — taking rigorously tested solutions from the lab to the operating room.</p>
+        </div>
       </div>
-      <div class="hed-stat">
-        <span class="hed-stat__number">1</span>
-        <span class="hed-stat__label">Patent filed</span>
-      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       BRAND IDENTITY — molecule fully visible, text below
+       ========================================================= -->
+  <section class="hed-brand">
+    <div class="hed-brand__img-wrap">
+      <img src="../images/hed/hed-sphere-teal.png"
+           alt="HED logo mark — 3D molecular render"
+           class="hed-brand__img"
+           loading="lazy">
+    </div>
+    <div class="hed-brand__content">
+      <span class="hed-brand__eyebrow">Brand Identity</span>
+      <h2 class="hed-brand__heading">A mark built from molecules</h2>
+      <p class="hed-brand__body">The HED logo mark is a 3D interpretation of molecular structure — spheres intersecting and bonding, evoking the language of biology and engineering. A visual metaphor for the company's mission: making the invisible visible, and the complex human.</p>
     </div>
   </section>
 
@@ -562,22 +749,19 @@
          loading="lazy">
     <div class="hed-team__overlay" aria-hidden="true"></div>
     <div class="hed-team__content">
-      <span class="hed-team__eyebrow">The Team · Bogotá</span>
-      <p class="hed-team__body">A multidisciplinary group of designers, engineers, and medical professionals united by a belief that better tools lead to better outcomes. HED operated as a lean R&amp;D studio — fast to prototype, rigorous to validate, and always driven by the patient experience.</p>
+      <span class="hed-team__eyebrow">The Team</span>
+      <p class="hed-team__body">A multidisciplinary group of industrial designers, bioengineers, and biomedical professionals united by a belief that better tools and human understanding lead to better outcomes. HED operates as a lean R&amp;D studio, fast to prototype, rigorous to validate, and always driven by the patient experience.</p>
     </div>
   </section>
 
 
   <!-- =========================================================
-       RELATED WORK — SkinGo link
+       FROM HED — projects placeholder
        ========================================================= -->
   <section class="hed-related" data-nav-light>
     <div class="hed-related__inner">
-      <p class="hed-related__label">From HED</p>
-      <a href="skingo.html" class="hed-related__link" aria-label="View SkinGo project">
-        <span class="hed-related__link-title">SkinGo — Surgical Debridement Glove</span>
-        <span class="hed-related__arrow" aria-hidden="true">→</span>
-      </a>
+      <span class="hed-related__label">From HED</span>
+      <p class="hed-related__placeholder">Projects coming soon</p>
     </div>
   </section>
 

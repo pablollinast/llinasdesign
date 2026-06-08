@@ -15,6 +15,19 @@
       --hed-teal: #2BC4C4;
     }
 
+    /* ── INTRO footnote ──────────────────────────────────────────── */
+    .pp-intro__footnote {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(0,0,0,0.38);
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 0.5px solid var(--border);
+      max-width: 560px;
+    }
+
     /* ── HERO ────────────────────────────────────────────────────── */
     .hed-hero {
       position: relative;
@@ -32,7 +45,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 40%;
+      object-position: 75% 40%;
       animation: heroImageReveal 8s ease both;
     }
 
@@ -92,7 +105,7 @@
 
     .hed-domains__eyebrow {
       font-family: var(--font-body);
-      font-size: 10px;
+      font-size: 13px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.14em;
@@ -126,11 +139,10 @@
     .hed-domain:last-child { border-right: none; padding-right: 0; }
 
     .hed-domain__number {
-      font-family: var(--font-body);
-      font-size: 10px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 2.5vw, 40px);
+      font-weight: 300;
+      letter-spacing: -0.01em;
       color: var(--hed-teal);
       display: block;
       margin-bottom: var(--space-md);
@@ -178,7 +190,7 @@
 
     .hed-strategy__eyebrow {
       font-family: var(--font-body);
-      font-size: 10px;
+      font-size: 13px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.14em;
@@ -203,7 +215,7 @@
 
     .hed-strategy__col-label {
       font-family: var(--font-body);
-      font-size: 10px;
+      font-size: 13px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.14em;
@@ -347,7 +359,7 @@
 
     .hed-process__phase-title {
       font-family: var(--font-heading);
-      font-size: clamp(16px, 1.4vw, 20px);
+      font-size: clamp(20px, 1.8vw, 28px);
       font-weight: 300;
       color: var(--white);
       line-height: 1.2;
@@ -454,13 +466,12 @@
     }
 
     .hed-team__eyebrow {
-      font-family: var(--font-body);
-      font-size: 10px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--hed-teal);
-      margin-bottom: var(--space-sm);
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 3vw, 48px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: var(--space-md);
       display: block;
     }
 
@@ -607,16 +618,13 @@
           <span class="pp-meta-value">R&amp;D Company</span>
         </div>
         <div class="pp-meta-item">
-          <span class="pp-meta-label">Role</span>
-          <span class="pp-meta-value">Co-Founder · CDO</span>
-        </div>
-        <div class="pp-meta-item">
           <span class="pp-meta-label">Location</span>
           <span class="pp-meta-value">Bogotá</span>
         </div>
       </div>
       <div class="pp-intro__text">
-        <p class="pp-intro__body">An R&amp;D company built to turn "night drawer ideas" into tangible products. Five years co-founding and leading design across surgical devices, medical training, and enterprise healthcare — with a team of industrial designers and biomedical engineers in Bogotá. Pioneering solutions that transform healthcare, designed and engineered with empathy.</p>
+        <p class="pp-intro__body">An R&amp;D company built to turn "night drawer ideas" into tangible products. Five years co-founding and leading design across surgical devices, medical training, and enterprise healthcare, with a team of industrial designers and biomedical engineers in Bogotá. Pioneering solutions that transform healthcare, designed and engineered with empathy.</p>
+        <p class="pp-intro__footnote">HED is an interpretation of a molecular structure. Spheres intersecting and bonding, evoking the language of biology and engineering. A visual metaphor for the company's mission: making the invisible visible, and the complex human.</p>
       </div>
     </div>
   </section>
@@ -645,7 +653,7 @@
         <div class="hed-domain">
           <span class="hed-domain__number">03</span>
           <h3 class="hed-domain__title">Enterprise Healthcare</h3>
-          <p class="hed-domain__body">Building digital products and systems for healthcare institutions — from workflow tooling to patient-facing interfaces. Bringing design thinking into environments where clarity and precision are critical.</p>
+          <p class="hed-domain__body">Design solutions for healthcare organizations that go beyond medical devices. Patient education materials for low-income hospitals, transport crates for medical equipment, furniture designed to hospital standards, and workflow design for surgical procedures. Physical and systemic, wherever clarity matters most.</p>
         </div>
       </div>
     </div>
@@ -664,16 +672,12 @@
       <div class="hed-strategy__cols">
         <div class="hed-strategy__col">
           <span class="hed-strategy__col-label">Context</span>
-          <p class="hed-strategy__col-body">At HED, I led the development of a design strategy rooted in deep user empathy and iterative prototyping. By embedding healthcare professionals and patients into our early discovery phases, we identified overlooked pain points in post-surgical care, infection control, and wound treatment. These insights informed a series of purpose-built products — not only clinically relevant, but emotionally intuitive for users.</p>
+          <p class="hed-strategy__col-body">At HED, I led the development of a design strategy rooted in deep user empathy and iterative prototyping. By embedding healthcare professionals and patients into our early discovery phases, we identified overlooked pain points in post-surgical care, infection control, and wound treatment. These insights informed a series of purpose-built products, not only clinically relevant, but emotionally intuitive for users.</p>
         </div>
         <div class="hed-strategy__col">
           <span class="hed-strategy__col-label">Outcome</span>
-          <p class="hed-strategy__col-body">Through rapid iteration and in-house additive manufacturing, we transformed early concepts into validated prototypes at record speed. Our ability to co-create with clinicians, pilot test in real settings, and adapt in real time allowed us to deliver solutions that felt tailored, not templated. This design-led approach became the backbone of our business model — enabling sustained growth by consistently delivering innovation that met real-world needs.</p>
+          <p class="hed-strategy__col-body">Through rapid iteration and in-house additive manufacturing, we transformed early concepts into validated prototypes at record speed. Our ability to co-create with clinicians, pilot test in real settings, and adapt in real time allowed us to deliver solutions that felt tailored, not templated. This design-led approach became the backbone of our business model, enabling sustained growth by consistently delivering innovation that met real-world needs.</p>
         </div>
-      </div>
-      <div class="hed-strategy__stat">
-        <span class="hed-strategy__stat-number">90%</span>
-        <span class="hed-strategy__stat-label">Year-over-year revenue growth — driven by design as both a care and business driver.</span>
       </div>
     </div>
   </section>
@@ -688,7 +692,7 @@
         <span class="hed-process__eyebrow">The HED Process</span>
         <h2 class="hed-process__heading">A proprietary design<br>methodology</h2>
       </div>
-      <p class="hed-process__body">A proprietary four-phase methodology that integrates clinical research, iterative design, and technology transfer. Each stage is grounded in deep context understanding and frontline collaboration — producing solutions that are patient-centered, manufacturable, and market-ready.</p>
+      <p class="hed-process__body">A proprietary four-phase methodology that integrates clinical research, iterative design, and technology transfer. Each stage is grounded in deep context understanding and frontline collaboration, producing solutions that are patient-centered, manufacturable, and market-ready.</p>
       <div class="hed-process__slides" aria-hidden="true">
         <img src="../images/hed/hed-process-01-necesidad.jpg" alt="Phase 01 — Need Identification" class="hed-process__slide-img" loading="lazy">
         <img src="../images/hed/hed-process-02-ideacion.jpg"  alt="Phase 02 — Ideation"           class="hed-process__slide-img" loading="lazy">
@@ -699,7 +703,7 @@
         <div class="hed-process__phase">
           <span class="hed-process__phase-num">Phase 01</span>
           <h3 class="hed-process__phase-title">Need Identification</h3>
-          <p class="hed-process__phase-body">Deep validation and understanding of the context in which the project lives — observations with clinicians, bibliographic research, and conversations with all stakeholders involved.</p>
+          <p class="hed-process__phase-body">Deep validation and understanding of the context in which the project lives. Observations with clinicians, bibliographic research, and conversations with all stakeholders involved.</p>
         </div>
         <div class="hed-process__phase">
           <span class="hed-process__phase-num">Phase 02</span>
@@ -709,32 +713,14 @@
         <div class="hed-process__phase">
           <span class="hed-process__phase-num">Phase 03</span>
           <h3 class="hed-process__phase-title">Development</h3>
-          <p class="hed-process__phase-body">Materialization, specification, and construction of the proposals that show relevant validation and a promising future — in vivo testing, materials engineering, and regulatory preparation.</p>
+          <p class="hed-process__phase-body">Materialization, specification, and construction of the proposals that show relevant validation and a promising future. In vivo testing, materials engineering, and regulatory preparation.</p>
         </div>
         <div class="hed-process__phase">
           <span class="hed-process__phase-num">Phase 04</span>
           <h3 class="hed-process__phase-title">Transfer</h3>
-          <p class="hed-process__phase-body">IP protection, patent filing, and go-to-market strategy. Clinical validation, user training, and deployment — taking rigorously tested solutions from the lab to the operating room.</p>
+          <p class="hed-process__phase-body">IP protection, patent filing, and go-to-market strategy. Clinical validation, user training, and deployment, taking rigorously tested solutions from the lab to the operating room.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================
-       BRAND IDENTITY — molecule fully visible, text below
-       ========================================================= -->
-  <section class="hed-brand">
-    <div class="hed-brand__img-wrap">
-      <img src="../images/hed/hed-sphere-teal.png"
-           alt="HED logo mark — 3D molecular render"
-           class="hed-brand__img"
-           loading="lazy">
-    </div>
-    <div class="hed-brand__content">
-      <span class="hed-brand__eyebrow">Brand Identity</span>
-      <h2 class="hed-brand__heading">A mark built from molecules</h2>
-      <p class="hed-brand__body">The HED logo mark is a 3D interpretation of molecular structure — spheres intersecting and bonding, evoking the language of biology and engineering. A visual metaphor for the company's mission: making the invisible visible, and the complex human.</p>
     </div>
   </section>
 

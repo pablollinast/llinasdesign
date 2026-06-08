@@ -518,9 +518,9 @@
 
     /* ── FROM HED ────────────────────────────────────────────────── */
     .hed-related {
-      background: var(--off-white);
+      background: var(--warm-black);
       padding: var(--space-xl) 0;
-      border-top: 0.5px solid var(--border);
+      border-top: 0.5px solid rgba(255,255,255,0.08);
     }
 
     .hed-related__inner {
@@ -534,7 +534,7 @@
       font-size: clamp(28px, 3vw, 48px);
       font-weight: 300;
       letter-spacing: -0.02em;
-      color: var(--warm-black);
+      color: var(--off-white);
       display: block;
       margin-bottom: var(--space-lg);
     }
@@ -559,9 +559,9 @@
 
     /* ── CLIENTS ─────────────────────────────────────────────────── */
     .hed-clients {
-      background: var(--warm-black);
+      background: var(--off-white);
       padding: var(--space-xl) 0;
-      border-top: 0.5px solid rgba(255,255,255,0.08);
+      border-top: 0.5px solid var(--border);
     }
 
     .hed-clients__inner {
@@ -575,9 +575,9 @@
       font-size: clamp(28px, 3vw, 48px);
       font-weight: 300;
       letter-spacing: -0.02em;
-      color: var(--hed-teal);
+      color: var(--warm-black);
       display: block;
-      margin-bottom: var(--space-xl);
+      margin-bottom: var(--space-md);
     }
 
     .hed-clients__grid {
@@ -588,16 +588,17 @@
     }
 
     .hed-clients__logo {
-      height: 28px;
+      height: 52px;
       width: auto;
-      max-width: 120px;
+      max-width: 180px;
       object-fit: contain;
-      filter: brightness(0) invert(1);
-      opacity: 0.45;
+      filter: grayscale(1);
+      opacity: 0.7;
       transition: opacity 0.3s ease;
     }
 
-    .hed-clients__logo:hover { opacity: 0.85; }
+    .hed-clients__logo:hover { opacity: 1; }
+    .hed-clients__logo--xl { height: 90px; max-width: 240px; }
 
     .hed-related__placeholder {
       font-family: var(--font-heading);
@@ -830,7 +831,7 @@
   <!-- =========================================================
        FROM HED — projects placeholder
        ========================================================= -->
-  <section class="hed-related" data-nav-light>
+  <section class="hed-related">
     <div class="hed-related__inner">
       <span class="hed-related__label">From HED</span>
       <div class="hed-related__grid">
@@ -870,21 +871,21 @@
   <!-- =========================================================
        CLIENTS
        ========================================================= -->
-  <section class="hed-clients">
+  <section class="hed-clients" data-nav-light>
     <div class="hed-clients__inner">
       <span class="hed-clients__label">Clients &amp; Partners</span>
       <div class="hed-clients__grid">
-        <img src="../images/hed/clients/client-abbott.png"                  alt="Abbott"                   class="hed-clients__logo" loading="lazy">
+        <img src="../images/hed/clients/client-abbott.png"                  alt="Abbott"                   class="hed-clients__logo hed-clients__logo--xl" loading="lazy">
         <img src="../images/hed/clients/client-boston-scientific.png"       alt="Boston Scientific"        class="hed-clients__logo" loading="lazy">
         <img src="../images/hed/clients/client-nuvasive.png"                alt="NuVasive"                 class="hed-clients__logo" loading="lazy">
-        <img src="../images/hed/clients/client-disortho.jpg"                alt="Disortho"                 class="hed-clients__logo" loading="lazy">
-        <img src="../images/hed/clients/client-sccot.png"                   alt="SCCOT"                    class="hed-clients__logo" loading="lazy">
+        <img src="../images/hed/clients/client-disortho.png"                alt="Disortho"                 class="hed-clients__logo hed-clients__logo--xl" loading="lazy">
+        <img src="../images/hed/clients/client-sccot.png"                   alt="SCCOT"                    class="hed-clients__logo hed-clients__logo--xl" loading="lazy">
         <img src="../images/hed/clients/client-oes.png"                     alt="OES"                      class="hed-clients__logo" loading="lazy">
-        <img src="../images/hed/clients/client-dipro.png"                   alt="Dipro"                    class="hed-clients__logo" loading="lazy">
+        <img src="../images/hed/clients/client-dipro.png"                   alt="Dipro"                    class="hed-clients__logo hed-clients__logo--xl" loading="lazy">
         <img src="../images/hed/clients/client-universidad-de-los-andes.png" alt="Universidad de los Andes" class="hed-clients__logo" loading="lazy">
         <img src="../images/hed/clients/client-ACG.png"                     alt="ACG"                      class="hed-clients__logo" loading="lazy">
         <img src="../images/hed/clients/client-berkley.png"                 alt="Berkley"                  class="hed-clients__logo" loading="lazy">
-        <img src="../images/hed/clients/client-epimedik.jpg"                alt="Epimedik"                 class="hed-clients__logo" loading="lazy">
+        <img src="../images/hed/clients/client-epimedik.png"                alt="Epimedik"                 class="hed-clients__logo" loading="lazy">
         <img src="../images/hed/clients/client-fsfb.png"                    alt="FSFB"                     class="hed-clients__logo" loading="lazy">
         <img src="../images/hed/clients/client-innomed.png"                 alt="Innomed"                  class="hed-clients__logo" loading="lazy">
         <img src="../images/hed/clients/client-superduds.png"               alt="Superduds"                class="hed-clients__logo" loading="lazy">

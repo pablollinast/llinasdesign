@@ -109,18 +109,28 @@
 
     .sk-patent__eyebrow {
       font-family: var(--font-body);
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.14em;
       color: var(--accent);
-      margin-bottom: var(--space-sm);
+      margin-bottom: 4px;
       display: block;
+    }
+
+    .sk-patent__eyebrow-sub {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-bottom: var(--space-sm);
     }
 
     .sk-patent__heading {
       font-family: var(--font-heading);
-      font-size: clamp(32px, 3.5vw, 52px);
+      font-size: clamp(36px, 4vw, 60px);
       font-weight: 300;
       letter-spacing: -0.02em;
       color: var(--white);
@@ -178,7 +188,7 @@
 
     .sk-inuse__eyebrow {
       font-family: var(--font-body);
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.14em;
@@ -243,8 +253,9 @@
          role="presentation">
     <div class="pp-hero__overlay" aria-hidden="true"></div>
     <div class="pp-hero__content">
-      <p class="pp-hero__eyebrow">Medical Device · 2023 · Pat. WO2022/043956 A1</p>
+      <p class="pp-hero__eyebrow">Medical Device · Health Engineering Design · 2023</p>
       <h1 class="pp-hero__title">SkinGo</h1>
+      <p style="font-family:var(--font-body);font-size:11px;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.45);margin-top:var(--space-xs);">Pat. WO2022/043956 A1</p>
     </div>
   </section>
 
@@ -253,22 +264,9 @@
        2. INTRO — matches Hypnos pp-intro pattern, no Overview label
        ========================================================= -->
   <section class="pp-intro" data-nav-light>
-    <div class="pp-intro__inner">
-      <div class="pp-intro__meta">
-        <div class="pp-meta-item">
-          <span class="pp-meta-label">Year</span>
-          <span class="pp-meta-value">2023</span>
-        </div>
-        <div class="pp-meta-item">
-          <span class="pp-meta-label">Type</span>
-          <span class="pp-meta-value">Medical Device</span>
-        </div>
-        <div class="pp-meta-item">
-          <span class="pp-meta-label">Location</span>
-          <span class="pp-meta-value">Bogotá</span>
-        </div>
-      </div>
+    <div class="pp-intro__inner" style="grid-template-columns: 1fr;">
       <div class="pp-intro__text">
+        <p class="pp-section__eyebrow pp-section__eyebrow--dark" style="font-size:14px;margin-bottom:var(--space-md);">Overview</p>
         <p class="pp-intro__body">A surgical glove with integrated 3D-printed micro-patterned dermabrasion surfaces for burn wound debridement. SkinGo replaces aggressive tools with a tactile, ergonomic interface — enabling surgeons to remove necrotic tissue precisely, preserving healthy skin, reducing infection risk, and improving healing outcomes for burn patients.</p>
       </div>
     </div>
@@ -327,7 +325,8 @@
          loading="lazy">
     <div class="sk-patent__overlay" aria-hidden="true"></div>
     <div class="sk-patent__content">
-      <span class="sk-patent__eyebrow">Debridement Design · Pat. WO2022043956A1</span>
+      <span class="sk-patent__eyebrow">Debridement Design</span>
+      <span class="sk-patent__eyebrow-sub">Pat. WO2022043956A1</span>
       <h2 class="sk-patent__heading">Patented Abrasive<br>Geometry</h2>
       <p class="sk-patent__body">The debridement surface of SkinGo is inspired by micro-patterned geometry, reimagined for surgical precision. Its patented radial arrangement of abrasive nodes ensures effective abrasion while protecting healthy skin — offering precision without trauma.</p>
     </div>
@@ -356,7 +355,7 @@
   <!-- =========================================================
        7. DESIGN FEATURES — flush to images above, no grey bars
        ========================================================= -->
-  <section class="pp-section pp-section--dark" style="padding-top:0;">
+  <section class="pp-section pp-section--dark" style="padding-top:var(--space-md);">
     <div class="pp-features">
       <div class="pp-feature">
         <p class="pp-feature__subtitle">01</p>

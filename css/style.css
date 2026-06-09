@@ -539,7 +539,7 @@ p {
 
 .about__eyebrow {
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -640,7 +640,7 @@ p {
 
 .section-eyebrow {
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;

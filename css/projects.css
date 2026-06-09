@@ -131,7 +131,7 @@
 
 .proj-item__category {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.10em;
@@ -140,7 +140,7 @@
 
 .proj-item__year {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 300;
   color: var(--mid-gray);
   letter-spacing: 0.06em;
@@ -187,7 +187,7 @@
 
 .proj-item__cta {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -228,7 +228,7 @@
 
 .proj-archive__label {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;

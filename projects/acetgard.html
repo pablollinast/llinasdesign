@@ -7,14 +7,28 @@
   <meta name="description" content="AcetGard — a protective barrier for total hip replacement surgeries. Medical Device, 2022. Pat. CO2021015180A1.">
   <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/project-page.css">
   <style>
 
-    /* Hero */
+    /* ── AcetGard brand blue ──────────────────────────────────────── */
+    :root { --ag-blue: #2B8CB3; }
+    .ag-accent { color: var(--ag-blue) !important; }
+
+    /* ── Shared large section heading ─────────────────────────────── */
+    .ag-section-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── HERO ────────────────────────────────────────────────────── */
     .ag-hero {
       position: relative;
       height: 100vh;
       min-height: 560px;
-      background: var(--black);
+      background: #0a0a0a;
       overflow: hidden;
       display: flex;
       align-items: flex-end;
@@ -25,8 +39,8 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      object-position: center;
+      object-fit: cover;
+      object-position: 65% center;
       animation: heroImageReveal 8s ease both;
     }
 
@@ -35,8 +49,8 @@
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(0,0,0,0.85) 0%,
-        rgba(0,0,0,0.10) 55%,
+        rgba(0,0,0,0.90) 0%,
+        rgba(0,0,0,0.08) 55%,
         transparent 100%
       );
     }
@@ -51,11 +65,11 @@
 
     .ag-hero__eyebrow {
       font-family: var(--font-body);
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.45);
       margin-bottom: var(--space-xs);
     }
 
@@ -68,125 +82,489 @@
       color: var(--white);
     }
 
-    /* Patent notice */
-    .ag-notice {
-      background: var(--warm-black);
-      padding: var(--space-lg) 0;
-    }
-
-    .ag-notice__inner {
-      max-width: 1400px;
-      margin-inline: auto;
-      padding-inline: 48px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-sm);
-      text-align: center;
-    }
-
-    .ag-notice__icon {
-      color: rgba(255,255,255,0.3);
-      flex-shrink: 0;
-    }
-
-    .ag-notice__text {
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.6;
-    }
-
-    .ag-notice__text strong {
-      color: rgba(255,255,255,0.7);
-      font-weight: 400;
-    }
-
-    /* Intro */
+    /* ── INTRO (overview only, no meta) ───────────────────────────── */
     .ag-intro {
       background: var(--off-white);
       padding: var(--space-xl) 0;
     }
 
     .ag-intro__inner {
-      max-width: 1400px;
+      max-width: 1100px;
       margin-inline: auto;
       padding-inline: 48px;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: var(--space-xl);
     }
 
-    .ag-intro__label {
+    .ag-intro__eyebrow {
       font-family: var(--font-body);
       font-size: 14px;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      padding-top: 4px;
+      letter-spacing: 0.14em;
+      color: var(--ag-blue);
+      display: block;
+      margin-bottom: var(--space-md);
     }
 
     .ag-intro__body {
       font-family: var(--font-heading);
-      font-size: clamp(20px, 2vw, 28px);
+      font-size: clamp(18px, 1.8vw, 26px);
       font-weight: 300;
-      line-height: 1.55;
+      line-height: 1.6;
       letter-spacing: -0.01em;
       color: var(--dark-charcoal);
     }
 
-    /* Meta */
-    .ag-meta {
-      background: var(--off-white);
-      border-top: 0.5px solid var(--border);
-      padding: var(--space-lg) 0;
+    /* ── THE PROBLEM — dark, bacteria ghost bg ────────────────────── */
+    .ag-problem {
+      position: relative;
+      background: var(--warm-black);
+      padding: var(--space-xl) 0 0;
+      overflow: hidden;
     }
 
-    .ag-meta__inner {
+    .ag-problem__bg {
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 520px;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 50%;
+      opacity: 0.10;
+      filter: blur(3px);
+      pointer-events: none;
+    }
+
+    .ag-problem__inner {
+      position: relative;
+      z-index: 2;
       max-width: 1400px;
       margin-inline: auto;
       padding-inline: 48px;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: var(--space-xl);
+      align-items: center;
     }
 
-    .ag-meta__item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .ag-meta__label {
+    .ag-problem__eyebrow {
       font-family: var(--font-body);
-      font-size: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ag-blue);
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+
+    .ag-problem__body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.55);
+      margin-top: var(--space-md);
+    }
+
+    .ag-problem__img-wrap {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: 50%;
+      opacity: 0.72;
+    }
+
+    .ag-problem__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── THE DEVICE — dark, image + text + OR ────────────────────── */
+    .ag-device {
+      background: var(--warm-black);
+      padding: var(--space-xl) 0 var(--space-xl);
+    }
+
+    .ag-device__header {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: end;
+      margin-bottom: var(--space-xl);
+    }
+
+    .ag-device__eyebrow {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ag-blue);
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+
+    .ag-device__body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* Card image — full bleed contained */
+    .ag-device__card-img {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+      margin-bottom: var(--space-xl);
+    }
+
+    .ag-device__card-img img {
+      width: 100%;
+      max-height: 580px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ── IN THE OR — collapsed inside device section ─────────────── */
+    .ag-or {
+      border-top: 0.5px solid rgba(255,255,255,0.08);
+      padding: var(--space-xl) 0;
+      background: var(--warm-black);
+    }
+
+    .ag-or__header {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+      margin-bottom: var(--space-lg);
+    }
+
+    .ag-or__eyebrow {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ag-blue);
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+
+    .ag-or__note {
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.45);
+      padding-top: 36px;
+    }
+
+    /* Warning + reveal */
+    .ag-or__warning {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+      margin-bottom: var(--space-md);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .ag-or__warning-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 0.5px solid rgba(255,255,255,0.2);
+      border-radius: 2px;
+      padding: 8px 14px;
+      font-family: var(--font-body);
+      font-size: 11px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: var(--accent);
+      color: rgba(255,255,255,0.40);
     }
 
-    .ag-meta__value {
+    .ag-or__reveal-btn {
+      background: none;
+      border: 0.5px solid rgba(255,255,255,0.22);
+      border-radius: 2px;
+      padding: 8px 16px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.50);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .ag-or__reveal-btn:hover {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.50);
+    }
+
+    /* Grid of 3 OR images */
+    .ag-or__grid {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .ag-or__item {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .ag-or__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: filter 0.6s ease, transform 0.6s ease;
+      filter: blur(14px) brightness(0.45);
+      transform: scale(1.08);
+    }
+
+    .ag-or__grid.is-revealed .ag-or__item img {
+      filter: blur(0) brightness(0.90);
+      transform: scale(1);
+    }
+
+    .ag-or__item-caption {
+      padding: 12px 0 0;
+    }
+
+    /* Bigger step numbers */
+    .ag-or__item-num {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: var(--ag-blue);
+      display: block;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .ag-or__item-label {
       font-family: var(--font-body);
       font-size: 14px;
       font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* ── DESIGN PROCESS — light ───────────────────────────────────── */
+    .ag-process {
+      background: var(--off-white);
+      padding: 0;
+    }
+
+    .ag-process__inner {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+      padding-top: var(--space-xl);
+    }
+
+    .ag-process__header {
+      margin-bottom: var(--space-sm);
+      padding-bottom: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .ag-process__eyebrow {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ag-blue);
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+
+    .ag-process__intro {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--dark-charcoal);
+      padding-top: 36px;
+    }
+
+    .ag-process__cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .ag-process__img-wrap {
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background: #e5e5e3;
+      margin-bottom: var(--space-md);
+    }
+
+    .ag-process__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform var(--transition-slow);
+    }
+
+    .ag-process__img-wrap:hover img { transform: scale(1.02); }
+
+    .ag-process__step {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ag-blue);
+      display: block;
+      margin-bottom: var(--space-xs);
+    }
+
+    .ag-process__col-title {
+      font-family: var(--font-heading);
+      font-size: clamp(20px, 1.8vw, 28px);
+      font-weight: 300;
+      letter-spacing: -0.01em;
       color: var(--warm-black);
+      line-height: 1.2;
+      margin-bottom: var(--space-sm);
+    }
+
+    .ag-process__col-body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--dark-charcoal);
+    }
+
+    /* ── ENGINEERING — light, 4 drawings ─────────────────────────── */
+    .ag-engineering {
+      background: var(--off-white);
+      border-top: 0.5px solid var(--border);
+      padding: var(--space-xl) 0;
+    }
+
+    .ag-engineering__inner {
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: 48px;
+    }
+
+    .ag-engineering__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: end;
+      margin-bottom: var(--space-xl);
+    }
+
+    .ag-engineering__eyebrow {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ag-blue);
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+
+    /* 4 drawings: sketch-views full-width top, then 3 dimension views below */
+    .ag-engineering__top {
+      overflow: hidden;
+      background: #f0f0ee;
+      margin-bottom: 2px;
+    }
+
+    .ag-engineering__top img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+      object-position: center;
+      padding: 32px 48px;
+      display: block;
+    }
+
+    .ag-engineering__drawings {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .ag-engineering__drawing {
+      background: #f0f0ee;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ag-engineering__drawing img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 24px;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .ag-problem__inner,
+      .ag-device__header,
+      .ag-or__header,
+      .ag-process__header,
+      .ag-engineering__header { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
-      .ag-intro__inner {
-        grid-template-columns: 1fr;
-        padding-inline: 20px;
-        gap: var(--space-md);
-      }
-      .ag-meta__inner {
-        padding-inline: 20px;
-        flex-wrap: wrap;
-        gap: var(--space-md);
-      }
       .ag-hero__content { padding: var(--space-md) 20px; }
-      .ag-notice__inner { padding-inline: 20px; }
+      .ag-intro__inner,
+      .ag-problem__inner,
+      .ag-device__header,
+      .ag-device__card-img,
+      .ag-or__header,
+      .ag-or__warning,
+      .ag-or__grid,
+      .ag-process__inner,
+      .ag-engineering__inner { padding-inline: 20px; }
+      .ag-problem__inner { grid-template-columns: 1fr; }
+      .ag-problem__img-wrap { display: none; }
+      .ag-process__cols { grid-template-columns: 1fr; }
+      .ag-engineering__drawings { grid-template-columns: 1fr; }
+      .ag-or__grid { grid-template-columns: 1fr; }
     }
 
   </style>
@@ -211,69 +589,190 @@
   </header>
 
 
-  <!-- =========================================================
+  <!-- =====================================================
        HERO
-       ========================================================= -->
+       ===================================================== -->
   <section class="ag-hero" aria-label="AcetGard">
-    <img src="../images/hero-acetgard.png"
-         alt="AcetGard — acetabular cup positioning and protective device"
+    <img src="../images/acetgard/hero-acetgard.png"
+         alt="AcetGard — protective barrier for total hip replacement surgery"
          class="ag-hero__img"
          role="presentation">
     <div class="ag-hero__overlay" aria-hidden="true"></div>
     <div class="ag-hero__content">
-      <p class="ag-hero__eyebrow">Medical Device · HED · Pat. CO2021015180A1 · 2022</p>
+      <p class="ag-hero__eyebrow">Medical Device · Health Engineering Design · 2022</p>
       <h1 class="ag-hero__title">AcetGard</h1>
+      <p style="font-family:var(--font-body);font-size:11px;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.40);margin-top:8px;">Pat. CO2021015180A1</p>
     </div>
   </section>
 
 
-  <!-- =========================================================
-       INTRO
-       ========================================================= -->
+  <!-- =====================================================
+       OVERVIEW
+       ===================================================== -->
   <section class="ag-intro" data-nav-light>
     <div class="ag-intro__inner">
-      <p class="ag-intro__label">Overview</p>
-      <p class="ag-intro__body">A protective barrier for total hip replacement surgeries. AcetGard reduces bacterial transfer by preventing contact between implants, surgical tools, and the incision site — improving safety and precision in one of orthopedics' most common procedures.</p>
+      <span class="ag-intro__eyebrow">Overview</span>
+      <p class="ag-intro__body">A protective barrier for total hip replacement surgery. AcetGard shields the acetabular component and surgical instruments from bacterial contact at the incision site, addressing the most preventable source of periprosthetic joint infection in one of orthopedics' most common procedures.</p>
     </div>
   </section>
 
 
-  <!-- =========================================================
-       META
-       ========================================================= -->
-  <div class="ag-meta" data-nav-light>
-    <div class="ag-meta__inner">
-      <div class="ag-meta__item">
-        <span class="ag-meta__label">Year</span>
-        <span class="ag-meta__value">2022</span>
+  <!-- =====================================================
+       THE PROBLEM
+       ===================================================== -->
+  <section class="ag-problem">
+    <img src="../images/acetgard/ag-bacteria-reference.jpg"
+         alt="" class="ag-problem__bg" aria-hidden="true">
+    <div class="ag-problem__inner">
+      <div>
+        <span class="ag-problem__eyebrow">The Problem</span>
+        <h2 class="ag-section-heading" style="color:var(--white);">Every incision is an open door.</h2>
+        <p class="ag-problem__body">Total hip replacement is performed over 500,000 times per year in the United States alone. It is largely safe, but periprosthetic joint infection (PJI) is one of its most catastrophic complications. Revisions are painful, expensive, and sometimes impossible to complete successfully.</p>
+        <p class="ag-problem__body">The primary contamination vector is bacterial transfer during implantation: the moment the acetabular component travels from the surgical tray, past the incision edges, into the joint cavity. No standard tool existed to interrupt that path. AcetGard was designed to own that window.</p>
       </div>
-      <div class="ag-meta__item">
-        <span class="ag-meta__label">Type</span>
-        <span class="ag-meta__value">Medical Device</span>
+      <div class="ag-problem__img-wrap" aria-hidden="true">
+        <img src="../images/acetgard/ag-bacteria-reference.jpg"
+             alt="Microscopic illustration of bacterial agents">
       </div>
-      <div class="ag-meta__item">
-        <span class="ag-meta__label">Role</span>
-        <span class="ag-meta__value">Co-Founder · CDO</span>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       THE DEVICE
+       ===================================================== -->
+  <section class="ag-device">
+
+    <div class="ag-device__header">
+      <div>
+        <span class="ag-device__eyebrow">The Solution</span>
+        <h2 class="ag-section-heading" style="color:var(--white);">A collar that protects without interrupting.</h2>
       </div>
-      <div class="ag-meta__item">
-        <span class="ag-meta__label">Company</span>
-        <span class="ag-meta__value">Health Engineering Design</span>
+      <p class="ag-device__body">AcetGard is a sterile, single-use collar that seats around the incision-edge before implantation begins. Three retention prongs anchor it in place without requiring fixation tools. The internal radius isolates the component from all incision-edge contact throughout this step of the procedure.</p>
+    </div>
+
+    <!-- Full-width cinematic crop -->
+    <div style="width:100%;margin-top:var(--space-xl);aspect-ratio:3/1;overflow:hidden;">
+      <img src="../images/acetgard/acetgard-final-product.png"
+           alt="AcetGard device — sterile single-use acetabular protective collar"
+           style="width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block;">
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       DESIGN PROCESS
+       ===================================================== -->
+  <section class="ag-process" data-nav-light>
+    <div class="ag-process__inner">
+      <div class="ag-process__header">
+        <div>
+          <span class="ag-process__eyebrow">Process</span>
+          <h2 class="ag-section-heading" style="color:var(--warm-black);">From constraint to form.</h2>
+        </div>
+        <p class="ag-process__intro">The device had to satisfy competing requirements: sterile enough for a class II surgical environment, rigid enough to hold position under insertion of component, and open enough not to obstruct the surgeon's field of view. The form emerged through iterative CAD and physical prototyping, tested against standard acetabular cup sizes from 48mm to 58mm.</p>
       </div>
-      <div class="ag-meta__item">
-        <span class="ag-meta__label">Location</span>
-        <span class="ag-meta__value">Bogotá</span>
+      <div class="ag-process__cols" style="grid-template-columns:1fr;">
+
+        <div class="ag-process__col">
+
+          <span class="ag-process__step">Iteration</span>
+          <h3 class="ag-process__col-title">Six major cycles</h3>
+          <p class="ag-process__col-body">Each iteration tested a different balance between open access, retention force,<br>and compatibility with the standard acetabular impactor. The form progressively<br>opened from a near-complete ring to the final horseshoe profile.</p>
+        </div>
+
       </div>
-      <div class="ag-meta__item">
-        <span class="ag-meta__label">Patent</span>
-        <span class="ag-meta__value">CO2021015180A1</span>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       PRODUCT SCROLL GALLERY — ag-render-hero
+       ===================================================== -->
+  <div class="pp-scroll-gallery" style="margin-top:var(--space-xl);">
+    <div class="pp-scroll-gallery__sticky">
+      <div class="pp-scroll-gallery__back">
+        <img src="../images/acetgard/ag-iterations-white.png" alt="AcetGard iterations" loading="lazy">
+      </div>
+      <div class="pp-scroll-gallery__front" id="scroll-gallery-front" style="grid-template-columns:1fr;">
+        <div class="pp-scroll-gallery__item">
+          <img src="../images/acetgard/ag-render-hero.jpg" alt="AcetGard — final device render" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
 
 
-  <!-- =========================================================
+  <!-- =====================================================
+       CLINICAL VALIDATION — IN THE OR
+       ===================================================== -->
+  <section class="ag-or" style="background:var(--warm-black);">
+    <div class="ag-or__header">
+      <div>
+        <span class="ag-or__eyebrow">Clinical Validation</span>
+        <h3 class="ag-section-heading" style="color:var(--white);">Used in a real operating room.</h3>
+      </div>
+      <p class="ag-or__note">AcetGard was tested intraoperatively in collaboration with an orthopedic surgical team from Fundacion Santa FE de Bogota. The sequence below documents the placement and active use of the device during a live procedure.</p>
+    </div>
+
+    <div class="ag-or__warning">
+      <span class="ag-or__warning-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Surgical imagery
+      </span>
+      <button class="ag-or__reveal-btn" id="ag-reveal-btn" onclick="revealOR()">Reveal images</button>
+    </div>
+
+    <div class="ag-or__grid" id="ag-or-grid">
+      <div>
+        <div class="ag-or__item">
+          <img src="../images/acetgard/ag-or-01-open-site.jpg"
+               alt="OR still: acetabular site open with retractors, no barrier in place">
+        </div>
+        <div class="ag-or__item-caption">
+          <span class="ag-or__item-num">01</span>
+          <span class="ag-or__item-label">Site prepared — acetabulum exposed</span>
+        </div>
+      </div>
+      <div>
+        <div class="ag-or__item">
+          <img src="../images/acetgard/ag-or-02-placement.jpg"
+               alt="OR still: surgeon placing AcetGard around the acetabular rim">
+        </div>
+        <div class="ag-or__item-caption">
+          <span class="ag-or__item-num">02</span>
+          <span class="ag-or__item-label">Device seated around the rim</span>
+        </div>
+      </div>
+      <div>
+        <div class="ag-or__item">
+          <img src="../images/acetgard/ag-or-03-active-use.jpg"
+               alt="OR still: acetabular cup being impacted through AcetGard collar">
+        </div>
+        <div class="ag-or__item-caption">
+          <span class="ag-or__item-num">03</span>
+          <span class="ag-or__item-label">Protected impaction — cup driven into position</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       ENGINEERING + DIMENSIONS
+       ===================================================== -->
+  <!-- Specifications section hidden — restore when ready -->
+  <!--
+  <section class="ag-engineering" data-nav-light>
+    ...
+  </section>
+  -->
+
+
+  <!-- =====================================================
        FOOTER
-       ========================================================= -->
+       ===================================================== -->
   <footer class="footer" role="contentinfo" data-nav-light>
     <div class="footer__inner">
       <div class="footer__col">
@@ -307,6 +806,19 @@
   </footer>
 
   <script src="../js/main.js" defer></script>
+  <script>
+    function revealOR() {
+      const grid = document.getElementById('ag-or-grid');
+      const btn  = document.getElementById('ag-reveal-btn');
+      if (grid.classList.contains('is-revealed')) {
+        grid.classList.remove('is-revealed');
+        btn.textContent = 'Reveal images';
+      } else {
+        grid.classList.add('is-revealed');
+        btn.textContent = 'Hide images';
+      }
+    }
+  </script>
 
 </body>
 </html>

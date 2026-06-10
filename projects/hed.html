@@ -78,23 +78,34 @@
 
     .hed-hero__img {
       position: absolute;
-      inset: 0;
-      width: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 30%;
+      width: 70%;
       height: 100%;
       object-fit: cover;
-      object-position: 96% 40%;
+      object-position: center 40%;
       animation: heroImageReveal 8s ease both;
     }
 
     .hed-hero__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.70) 0%,
-        rgba(0,0,0,0.15) 50%,
-        transparent 100%
-      );
+      background:
+        linear-gradient(
+          to right,
+          #1BB8C0 0%,
+          rgba(27, 184, 192, 0.6) 18%,
+          rgba(27, 184, 192, 0) 38%,
+          transparent 60%
+        ),
+        linear-gradient(
+          to top,
+          rgba(0,0,0,0.70) 0%,
+          rgba(0,0,0,0.15) 50%,
+          transparent 100%
+        );
     }
 
     .hed-hero__content {
@@ -137,7 +148,7 @@
     }
 
     .hed-domains__header {
-      margin-bottom: var(--space-xl);
+      margin-bottom: var(--space-md);
     }
 
     .hed-domains__eyebrow {
@@ -164,16 +175,25 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0;
-      border-top: 0.5px solid rgba(255,255,255,0.12);
     }
 
     .hed-domain {
       padding: var(--space-xl) var(--space-lg);
-      border-right: 0.5px solid rgba(255,255,255,0.12);
+      position: relative;
+    }
+
+    .hed-domain:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: var(--space-xl);
+      bottom: var(--space-xl);
+      width: 0.5px;
+      background: rgba(255,255,255,0.12);
     }
 
     .hed-domain:first-child { padding-left: 0; }
-    .hed-domain:last-child { border-right: none; padding-right: 0; }
+    .hed-domain:last-child { padding-right: 0; }
 
     .hed-domain__number {
       font-family: var(--font-heading);
@@ -278,13 +298,8 @@
     }
 
     .hed-process__header {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: var(--space-xl);
-      align-items: start;
-      margin-bottom: var(--space-xl);
-      padding-bottom: var(--space-xl);
-      border-bottom: 0.5px solid rgba(255,255,255,0.12);
+      margin-bottom: var(--space-md);
+      padding-bottom: 0;
     }
 
     .hed-process__eyebrow {
@@ -676,8 +691,8 @@
     <div class="pp-intro__inner" style="grid-template-columns: 1fr;">
       <div class="pp-intro__text">
         <p class="pp-section__eyebrow pp-section__eyebrow--dark" style="font-size:14px;color:var(--hed-teal);margin-bottom:var(--space-md);">Overview</p>
-        <p class="pp-intro__body">An R&amp;D company built to turn "night drawer ideas" into tangible products. Five years co-founding and leading design across surgical devices, medical training, and enterprise healthcare, with a team of industrial designers and biomedical engineers in Bogotá. Pioneering solutions that transform healthcare, designed and engineered with empathy.</p>
-        <p class="pp-intro__body" style="margin-top: var(--space-md);">HED is an interpretation of a molecular structure. Spheres intersecting and bonding, evoking the language of biology and engineering. A visual metaphor for the company's mission: making the invisible visible, and the complex human.</p>
+        <p class="pp-intro__body" style="font-family:var(--font-heading);font-size:clamp(18px,1.8vw,26px);font-weight:300;line-height:1.6;letter-spacing:-0.01em;">An R&amp;D company built to turn "night drawer ideas" into tangible products. Five years co-founding and leading design across surgical devices, medical training, and enterprise healthcare, with a team of industrial designers and biomedical engineers in Bogotá. Pioneering solutions that transform healthcare, designed and engineered with empathy.</p>
+        <p class="pp-intro__body" style="margin-top:var(--space-md);font-family:var(--font-heading);font-size:clamp(18px,1.8vw,26px);font-weight:300;line-height:1.6;letter-spacing:-0.01em;">HED is an interpretation of a molecular structure. Spheres intersecting and bonding, evoking the language of biology and engineering. A visual metaphor for the company's mission: making the invisible visible, and the complex human.</p>
       </div>
     </div>
   </section>
@@ -741,6 +756,10 @@
        ========================================================= -->
   <section class="hed-process">
     <div class="hed-process__inner">
+      <div class="hed-process__header">
+        <span class="hed-process__eyebrow" style="display:block;margin-bottom:var(--space-sm);">The HED Process</span>
+        <h2 class="hed-process__heading">Co-Creation Pathway</h2>
+      </div>
       <p class="hed-process__desc">A four-phase methodology that integrates clinical research, iterative design, and technology transfer. Each stage is grounded in deep context understanding and frontline collaboration, producing solutions that are patient-centered, manufacturable, and market-ready.</p>
       <img src="../images/hed/hed-process-diagram.png"
            alt="HED Process — Co-Creation Pathway diagram"

@@ -26,7 +26,20 @@
         <li><a href="../cv.html"            class="nav__link">CV</a></li>
       </ul>
     </nav>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+      <span class="nav__hamburger-bar"></span>
+      <span class="nav__hamburger-bar"></span>
+      <span class="nav__hamburger-bar"></span>
+    </button>
   </header>
+  <div class="nav__mobile" aria-hidden="true">
+    <ul class="nav__mobile-links">
+      <li><a href="../index.html#about"   class="nav__mobile-link">About</a></li>
+      <li><a href="../projects.html"      class="nav__mobile-link">Work</a></li>
+      <li><a href="../index.html#contact" class="nav__mobile-link">Contact</a></li>
+      <li><a href="../cv.html"            class="nav__mobile-link">CV</a></li>
+    </ul>
+  </div>
 
 
   <!-- =========================================================
@@ -120,10 +133,10 @@
       <p class="pp-section__eyebrow">Final Result</p>
       <p class="pp-section__subheading">—An evolving dialogue between <em>form and function.</em></p>
     </div>
-    <div style="position:relative;max-width:1400px;margin-inline:auto;padding-inline:48px;">
-      <img src="../images/curva/curva-render-clean.png" alt="Curva bench — final render" loading="lazy" style="width:100%;display:block;">
-      <div style="position:absolute;bottom:var(--space-md);left:calc(48px + var(--space-md));max-width:480px;">
-        <p style="font-family:var(--font-body);font-size:14px;font-weight:300;line-height:1.8;color:var(--dark-charcoal);">Curva blends fluid, sculptural forms to create a bold geometric presence.<br>Its sleek contours enhance contemporary spaces, harmonizing<br>form and function to transform seating into a design statement.</p>
+    <div class="curva-result">
+      <img src="../images/curva/curva-render-clean.png" alt="Curva bench — final render" loading="lazy" class="curva-result__img">
+      <div class="curva-result__caption">
+        <p class="curva-result__text">Curva blends fluid, sculptural forms to create a bold geometric presence. Its sleek contours enhance contemporary spaces, harmonizing form and function to transform seating into a design statement.</p>
       </div>
     </div>
   </section>

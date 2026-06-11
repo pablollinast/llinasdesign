@@ -18,7 +18,42 @@
 
 
 /* ---------------------------------------------------------------------------
-   2. NAVIGATION — transparent always, adapts to section background
+   2. MOBILE MENU
+   --------------------------------------------------------------------------- */
+(function initMobileMenu() {
+  const hamburger  = document.querySelector('.nav__hamburger');
+  const mobileMenu = document.querySelector('.nav__mobile');
+  const nav        = document.querySelector('.nav');
+  if (!hamburger || !mobileMenu) return;
+
+  function openMenu() {
+    mobileMenu.classList.add('is-open');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+    nav.classList.add('nav--menu-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('is-open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('nav--menu-open');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu();
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+})();
+
+
+/* ---------------------------------------------------------------------------
+   3. NAVIGATION — transparent always, adapts to section background
    --------------------------------------------------------------------------- */
 (function initNav() {
   const nav = document.querySelector('.nav');

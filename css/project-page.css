@@ -398,6 +398,12 @@
 @media (max-width: 768px) {
   .pp-scroll-gallery { height: 380vh; }
   .pp-scroll-gallery__front { grid-template-columns: 1fr; }
+  .pp-scroll-gallery__back {
+    background: #c8c8c8;
+  }
+  .pp-scroll-gallery__back img {
+    object-fit: contain;
+  }
 }
 
 
@@ -847,6 +853,11 @@
 
   .pp-split__img { aspect-ratio: 16/9; }
 
+  .pp-split__text {
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+
   .pp-features {
     padding-inline: 20px;
     grid-template-columns: 1fr;
@@ -854,5 +865,49 @@
 
   .pp-final-caption {
     padding-inline: 20px;
+  }
+}
+
+
+/* =============================================================================
+   CURVA — FINAL RESULT BLOCK
+   ============================================================================= */
+.curva-result {
+  position: relative;
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 48px;
+}
+
+.curva-result__img {
+  width: 100%;
+  display: block;
+}
+
+.curva-result__caption {
+  position: absolute;
+  bottom: var(--space-md);
+  left: calc(48px + var(--space-md));
+  max-width: 480px;
+}
+
+.curva-result__text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--dark-charcoal);
+}
+
+@media (max-width: 768px) {
+  .curva-result {
+    padding-inline: 20px;
+  }
+
+  .curva-result__caption {
+    position: static;
+    margin-top: var(--space-sm);
+    padding-inline: 0;
+    max-width: 100%;
   }
 }

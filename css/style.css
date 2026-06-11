@@ -299,6 +299,91 @@ p {
   background: var(--accent);
 }
 
+/* Hamburger button — hidden on desktop */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 101;
+  padding: 0;
+}
+
+.nav__hamburger-bar {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--white);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.nav--light-bg .nav__hamburger-bar {
+  background: var(--warm-black);
+}
+
+/* X state when menu is open */
+.nav--menu-open .nav__hamburger-bar {
+  background: var(--white);
+}
+.nav--menu-open .nav__hamburger-bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav--menu-open .nav__hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav--menu-open .nav__hamburger-bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Mobile menu full-screen overlay */
+.nav__mobile {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: var(--warm-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav__mobile.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav__mobile-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.nav__mobile-link {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 10vw, 64px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+}
+
+.nav__mobile-link:hover,
+.nav__mobile-link:active {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .nav__hamburger { display: flex; }
+}
+
 
 /* =============================================================================
    HERO
@@ -1440,6 +1525,14 @@ p {
 .about:hover .about__image-wrap.is-visible,
 .about:hover .about__content.is-visible {
   opacity: 1;
+}
+
+/* Touch devices: no hover, so keep full opacity */
+@media (hover: none) {
+  .about__image-wrap.is-visible,
+  .about__content.is-visible {
+    opacity: 1;
+  }
 }
 
 /* Arrow must stay hidden until hover regardless of reveal state */
